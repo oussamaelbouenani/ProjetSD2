@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="cca3">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="\D{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="region">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Americas"/>
+			<xs:enumeration value="Asia"/>
+			<xs:enumeration value="Africa"/>
+			<xs:enumeration value="Europe"/>
+			<xs:enumeration value="Oceania"/>
+			<xs:enumeration value="Antarctic"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="countries">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="country" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="border" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded">
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="capital" type="xs:string"/>
+						<xs:attribute name="cca3" type="cca3" use="required"/>
+						<xs:attribute name="currency" type="xs:string"/>
+						<xs:attribute name="languages" type="xs:string"/>
+						<xs:attribute name="latlng" type="xs:string" use="required"/>
+						<xs:attribute name="name" type="xs:string" use="required"/>
+						<xs:attribute name="population" type="xs:nonNegativeInteger" use="required"/>
+						<xs:attribute name="region" type="region" use="required"/>
+						<xs:attribute name="subregion" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

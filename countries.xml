@@ -1,0 +1,1611 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<countries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="countries.xsd">
+	<country capital="Oranjestad" cca3="ABW" currency="AWG"
+		languages="Dutch,Papiamento" latlng="12.5,-69.96666666" name="Aruba"
+		population="101484" region="Americas" subregion="Caribbean"/>
+	<country capital="Kabul" cca3="AFG" currency="AFN"
+		languages="Dari,Pashto,Turkmen" latlng="33,65" name="Afghanistan"
+		population="25500100" region="Asia" subregion="Southern Asia">
+		<border>IRN</border>
+		<border>PAK</border>
+		<border>TKM</border>
+		<border>UZB</border>
+		<border>TJK</border>
+		<border>CHN</border>
+	</country>
+	<country capital="Luanda" cca3="AGO" currency="AOA"
+		languages="Portuguese" latlng="-12.5,18.5" name="Angola"
+		population="20609294" region="Africa" subregion="Middle Africa">
+		<border>COG</border>
+		<border>COD</border>
+		<border>ZMB</border>
+		<border>NAM</border>
+	</country>
+	<country capital="The Valley" cca3="AIA" currency="XCD"
+		languages="English" latlng="18.25,-63.16666666" name="Anguilla"
+		population="13452" region="Americas" subregion="Caribbean" />
+	<country capital="Mariehamn" cca3="ALA" currency="EUR"
+		languages="Swedish" latlng="60.116667,19.9" name="Åland Islands"
+		population="28502" region="Europe" subregion="Northern Europe" />
+	<country capital="Tirana" cca3="ALB" currency="ALL"
+		languages="Albanian" latlng="41,20" name="Albania"
+		population="2821977" region="Europe" subregion="Southern Europe">
+		<border>MNE</border>
+		<border>GRC</border>
+		<border>MKD</border>
+	</country>
+	<country capital="Andorra la Vella" cca3="AND" currency="EUR"
+		languages="Catalan" latlng="42.5,1.5" name="Andorra"
+		population="76246" region="Europe" subregion="Southern Europe">
+		<border>FRA</border>
+		<border>ESP</border>
+	</country>
+	<country capital="Abu Dhabi" cca3="ARE" currency="AED"
+		languages="Arabic" latlng="24,54" name="United Arab Emirates"
+		population="5473972" region="Asia" subregion="Western Asia">
+		<border>OMN</border>
+		<border>SAU</border>
+	</country>
+	<country capital="Buenos Aires" cca3="ARG" currency="ARS"
+		languages="Guaraní,Spanish" latlng="-34,-64" name="Argentina"
+		population="40117096" region="Americas" subregion="South America">
+		<border>BOL</border>
+		<border>BRA</border>
+		<border>CHL</border>
+		<border>PRY</border>
+		<border>URY</border>
+	</country>
+	<country capital="Yerevan" cca3="ARM" currency="AMD"
+		languages="Armenian" latlng="40,45" name="Armenia"
+		population="3024100" region="Asia" subregion="Western Asia">
+		<border>AZE</border>
+		<border>GEO</border>
+		<border>IRN</border>
+		<border>TUR</border>
+	</country>
+	<country capital="Pago Pago" cca3="ASM" currency="USD"
+		languages="English,Samoan" latlng="-14.33333333,-170"
+		name="American Samoa" population="55519" region="Oceania"
+		subregion="Polynesia" />
+	<country cca3="ATA" latlng="-90,0" name="Antarctica"
+		population="0" region="Antarctic" />
+	<country capital="Port-aux-Français" cca3="ATF" currency="EUR"
+		languages="French" latlng="-49.25,69.167"
+		name="French Southern and Antarctic Lands" population="140"
+		region="Antarctic" />
+	<country capital="Saint John's" cca3="ATG" currency="XCD"
+		languages="English" latlng="17.05,-61.8" name="Antigua and Barbuda"
+		population="86295" region="Americas" subregion="Caribbean" />
+	<country capital="Canberra" cca3="AUS" currency="AUD"
+		languages="English" latlng="-27,133" name="Australia"
+		population="23254142" region="Oceania"
+		subregion="Australia and New Zealand" />
+	<country capital="Vienna" cca3="AUT" currency="EUR"
+		languages="Austro-Bavarian German" latlng="47.33333333,13.33333333"
+		name="Austria" population="8501502" region="Europe"
+		subregion="Western Europe">
+		<border>CZE</border>
+		<border>DEU</border>
+		<border>HUN</border>
+		<border>ITA</border>
+		<border>LIE</border>
+		<border>SVK</border>
+		<border>SVN</border>
+		<border>CHE</border>
+	</country>
+	<country capital="Baku" cca3="AZE" currency="AZN"
+		languages="Azerbaijani,Russian" latlng="40.5,47.5" name="Azerbaijan"
+		population="9235100" region="Asia" subregion="Western Asia">
+		<border>ARM</border>
+		<border>GEO</border>
+		<border>IRN</border>
+		<border>RUS</border>
+		<border>TUR</border>
+	</country>
+	<country capital="Bujumbura" cca3="BDI" currency="BIF"
+		languages="French,Kirundi" latlng="-3.5,30" name="Burundi"
+		population="10163000" region="Africa" subregion="Eastern Africa">
+		<border>COD</border>
+		<border>RWA</border>
+		<border>TZA</border>
+	</country>
+	<country capital="Brussels" cca3="BEL" currency="EUR"
+		languages="German,French,Dutch" latlng="50.83333333,4" name="Belgium"
+		population="11175653" region="Europe" subregion="Western Europe">
+		<border>FRA</border>
+		<border>DEU</border>
+		<border>LUX</border>
+		<border>NLD</border>
+	</country>
+	<country capital="Porto-Novo" cca3="BEN" currency="XOF"
+		languages="French" latlng="9.5,2.25" name="Benin"
+		population="10323000" region="Africa" subregion="Western Africa">
+		<border>BFA</border>
+		<border>NER</border>
+		<border>NGA</border>
+		<border>TGO</border>
+	</country>
+	<country capital="Ouagadougou" cca3="BFA" currency="XOF"
+		languages="French" latlng="13,-2" name="Burkina Faso"
+		population="17322796" region="Africa" subregion="Western Africa">
+		<border>BEN</border>
+		<border>CIV</border>
+		<border>GHA</border>
+		<border>MLI</border>
+		<border>NER</border>
+		<border>TGO</border>
+	</country>
+	<country capital="Dhaka" cca3="BGD" currency="BDT"
+		languages="Bengali" latlng="24,90" name="Bangladesh"
+		population="152518015" region="Asia" subregion="Southern Asia">
+		<border>MMR</border>
+		<border>IND</border>
+	</country>
+	<country capital="Sofia" cca3="BGR" currency="BGN"
+		languages="Bulgarian" latlng="43,25" name="Bulgaria"
+		population="7282041" region="Europe" subregion="Eastern Europe">
+		<border>GRC</border>
+		<border>MKD</border>
+		<border>ROU</border>
+		<border>SRB</border>
+		<border>TUR</border>
+	</country>
+	<country capital="Manama" cca3="BHR" currency="BHD"
+		languages="Arabic" latlng="26,50.55" name="Bahrain"
+		population="1234571" region="Asia" subregion="Western Asia" />
+	<country capital="Nassau" cca3="BHS" currency="BSD"
+		languages="English" latlng="24.25,-76" name="Bahamas"
+		population="319031" region="Americas" subregion="Caribbean" />
+	<country capital="Sarajevo" cca3="BIH" currency="BAM"
+		languages="Bosnian,Croatian,Serbian" latlng="44,18"
+		name="Bosnia and Herzegovina" population="3791622" region="Europe"
+		subregion="Southern Europe">
+		<border>HRV</border>
+		<border>MNE</border>
+		<border>SRB</border>
+	</country>
+	<country capital="Gustavia" cca3="BLM" currency="EUR"
+		languages="French" latlng="18.5,-63.41666666" name="Saint Barthélemy"
+		population="8938" region="Americas" subregion="Caribbean" />
+	<country capital="Jamestown" cca3="SHN" currency="SHP,GBP"
+		languages="English" latlng="-15.95,-5.72" name="Saint Helena"
+		population="4255" region="Africa" subregion="Western Africa" />
+	<country capital="Minsk" cca3="BLR" currency="BYN"
+		languages="Belarusian,Russian" latlng="53,28" name="Belarus"
+		population="9465500" region="Europe" subregion="Eastern Europe">
+		<border>LVA</border>
+		<border>LTU</border>
+		<border>POL</border>
+		<border>RUS</border>
+		<border>UKR</border>
+	</country>
+	<country capital="Belmopan" cca3="BLZ" currency="BZD"
+		languages="Belizean Creole,English,Spanish" latlng="17.25,-88.75"
+		name="Belize" population="312971" region="Americas"
+		subregion="Central America">
+		<border>GTM</border>
+		<border>MEX</border>
+	</country>
+	<country capital="Hamilton" cca3="BMU" currency="BMD"
+		languages="English" latlng="32.33333333,-64.75" name="Bermuda"
+		population="64237" region="Americas" subregion="Northern America" />
+	<country capital="Sucre" cca3="BOL" currency="BOB,BOV"
+		languages="Aymara,Guaraní,Quechua,Spanish" latlng="-17,-65"
+		name="Bolivia" population="10027254" region="Americas"
+		subregion="South America">
+		<border>ARG</border>
+		<border>BRA</border>
+		<border>CHL</border>
+		<border>PRY</border>
+		<border>PER</border>
+	</country>
+	<country cca3="BES" currency="USD"
+		languages="English,Dutch,Papiamento" latlng="12.18,-68.25"
+		name="Bonaire" population="17408" region="Americas"
+		subregion="Caribbean" />
+	<country capital="Brasília" cca3="BRA" currency="BRL"
+		languages="Portuguese" latlng="-10,-55" name="Brazil"
+		population="201032714" region="Americas" subregion="South America">
+		<border>ARG</border>
+		<border>BOL</border>
+		<border>COL</border>
+		<border>GUF</border>
+		<border>GUY</border>
+		<border>PRY</border>
+		<border>PER</border>
+		<border>SUR</border>
+		<border>URY</border>
+		<border>VEN</border>
+	</country>
+	<country capital="Bridgetown" cca3="BRB" currency="BBD"
+		languages="English" latlng="13.16666666,-59.53333333" name="Barbados"
+		population="274200" region="Americas" subregion="Caribbean" />
+	<country capital="Bandar Seri Begawan" cca3="BRN"
+		currency="BND" languages="Malay" latlng="4.5,114.66666666"
+		name="Brunei" population="393162" region="Asia"
+		subregion="South-Eastern Asia">
+		<border>MYS</border>
+	</country>
+	<country capital="Thimphu" cca3="BTN" currency="BTN,INR"
+		languages="Dzongkha" latlng="27.5,90.5" name="Bhutan"
+		population="740990" region="Asia" subregion="Southern Asia">
+		<border>CHN</border>
+		<border>IND</border>
+	</country>
+	<country cca3="BVT" currency="NOK" languages="Norwegian"
+		latlng="-54.43333333,3.4" name="Bouvet Island" population="0"
+		region="Antarctic" />
+	<country capital="Gaborone" cca3="BWA" currency="BWP"
+		languages="English,Tswana" latlng="-22,24" name="Botswana"
+		population="2024904" region="Africa" subregion="Southern Africa">
+		<border>NAM</border>
+		<border>ZAF</border>
+		<border>ZMB</border>
+		<border>ZWE</border>
+	</country>
+	<country capital="Bangui" cca3="CAF" currency="XAF"
+		languages="French,Sango" latlng="7,21" name="Central African Republic"
+		population="4616000" region="Africa" subregion="Middle Africa">
+		<border>CMR</border>
+		<border>TCD</border>
+		<border>COD</border>
+		<border>COG</border>
+		<border>SSD</border>
+		<border>SDN</border>
+	</country>
+	<country capital="Ottawa" cca3="CAN" currency="CAD"
+		languages="English,French" latlng="60,-95" name="Canada"
+		population="35158304" region="Americas" subregion="Northern America">
+		<border>USA</border>
+	</country>
+	<country capital="West Island" cca3="CCK" currency="AUD"
+		languages="English" latlng="-12.5,96.83333333"
+		name="Cocos (Keeling) Islands" population="550" region="Oceania"
+		subregion="Australia and New Zealand" />
+	<country capital="Bern" cca3="CHE" currency="CHE,CHF,CHW"
+		languages="French,Swiss German,Italian,Romansh" latlng="47,8"
+		name="Switzerland" population="8085300" region="Europe"
+		subregion="Western Europe">
+		<border>AUT</border>
+		<border>FRA</border>
+		<border>ITA</border>
+		<border>LIE</border>
+		<border>DEU</border>
+	</country>
+	<country capital="Santiago" cca3="CHL" currency="CLF,CLP"
+		languages="Spanish" latlng="-30,-71" name="Chile"
+		population="16634603" region="Americas" subregion="South America">
+		<border>ARG</border>
+		<border>BOL</border>
+		<border>PER</border>
+	</country>
+	<country capital="Beijing" cca3="CHN" currency="CNY"
+		languages="Chinese" latlng="35,105" name="China"
+		population="1361170000" region="Asia" subregion="Eastern Asia">
+		<border>AFG</border>
+		<border>BTN</border>
+		<border>MMR</border>
+		<border>HKG</border>
+		<border>IND</border>
+		<border>KAZ</border>
+		<border>NPL</border>
+		<border>PRK</border>
+		<border>KGZ</border>
+		<border>LAO</border>
+		<border>MAC</border>
+		<border>MNG</border>
+		<border>PAK</border>
+		<border>RUS</border>
+		<border>TJK</border>
+		<border>VNM</border>
+	</country>
+	<country capital="Yamoussoukro" cca3="CIV" currency="XOF"
+		languages="French" latlng="8,-5" name="Ivory Coast"
+		population="22400835" region="Africa" subregion="Western Africa">
+		<border>BFA</border>
+		<border>GHA</border>
+		<border>GIN</border>
+		<border>LBR</border>
+		<border>MLI</border>
+	</country>
+	<country capital="Yaoundé" cca3="CMR" currency="XAF"
+		languages="English,French" latlng="6,12" name="Cameroon"
+		population="20386799" region="Africa" subregion="Middle Africa">
+		<border>CAF</border>
+		<border>TCD</border>
+		<border>COG</border>
+		<border>GNQ</border>
+		<border>GAB</border>
+		<border>NGA</border>
+	</country>
+	<country capital="Kinshasa" cca3="COD" currency="CDF"
+		languages="French,Kikongo,Lingala,Tshiluba,Swahili" latlng="0,25"
+		name="Democratic Republic of the Congo" population="67514000"
+		region="Africa" subregion="Middle Africa">
+		<border>AGO</border>
+		<border>BDI</border>
+		<border>CAF</border>
+		<border>COG</border>
+		<border>RWA</border>
+		<border>SSD</border>
+		<border>TZA</border>
+		<border>UGA</border>
+		<border>ZMB</border>
+	</country>
+	<country capital="Brazzaville" cca3="COG" currency="XAF"
+		languages="French,Kikongo,Lingala" latlng="-1,15"
+		name="Republic of the Congo" population="4448000" region="Africa"
+		subregion="Middle Africa">
+		<border>AGO</border>
+		<border>CMR</border>
+		<border>CAF</border>
+		<border>COD</border>
+		<border>GAB</border>
+	</country>
+	<country capital="Avarua" cca3="COK" currency="NZD,CKD"
+		languages="English,Cook Islands Māori"
+		latlng="-21.23333333,-159.76666666" name="Cook Islands"
+		population="14974" region="Oceania" subregion="Polynesia" />
+	<country capital="Bogotá" cca3="COL" currency="COP"
+		languages="Spanish" latlng="4,-72" name="Colombia"
+		population="47330000" region="Americas" subregion="South America">
+		<border>BRA</border>
+		<border>ECU</border>
+		<border>PAN</border>
+		<border>PER</border>
+		<border>VEN</border>
+	</country>
+	<country capital="Moroni" cca3="COM" currency="KMF"
+		languages="Arabic,French,Comorian" latlng="-12.16666666,44.25"
+		name="Comoros" population="724300" region="Africa"
+		subregion="Eastern Africa" />
+	<country capital="Praia" cca3="CPV" currency="CVE"
+		languages="Portuguese" latlng="16,-24" name="Cape Verde"
+		population="491875" region="Africa" subregion="Western Africa" />
+	<country capital="San José" cca3="CRI" currency="CRC"
+		languages="Spanish" latlng="10,-84" name="Costa Rica"
+		population="4667096" region="Americas" subregion="Central America">
+		<border>NIC</border>
+		<border>PAN</border>
+	</country>
+	<country capital="Havana" cca3="CUB" currency="CUC,CUP"
+		languages="Spanish" latlng="21.5,-80" name="Cuba"
+		population="11167325" region="Americas" subregion="Caribbean" />
+	<country capital="Willemstad" cca3="CUW" currency="ANG"
+		languages="English,Dutch,Papiamento" latlng="12.116667,-68.933333"
+		name="Curaçao" population="150563" region="Americas"
+		subregion="Caribbean" />
+	<country capital="Flying Fish Cove" cca3="CXR" currency="AUD"
+		languages="English" latlng="-10.5,105.66666666"
+		name="Christmas Island" population="2072" region="Oceania"
+		subregion="Australia and New Zealand" />
+	<country capital="George Town" cca3="CYM" currency="KYD"
+		languages="English" latlng="19.5,-80.5" name="Cayman Islands"
+		population="55456" region="Americas" subregion="Caribbean" />
+	<country capital="Nicosia" cca3="CYP" currency="EUR"
+		languages="Greek,Turkish" latlng="35,33" name="Cyprus"
+		population="865878" region="Europe" subregion="Eastern Europe" />
+	<country capital="Prague" cca3="CZE" currency="CZK"
+		languages="Czech,Slovak" latlng="49.75,15.5" name="Czech Republic"
+		population="10512900" region="Europe" subregion="Eastern Europe">
+		<border>AUT</border>
+		<border>DEU</border>
+		<border>POL</border>
+		<border>SVK</border>
+	</country>
+	<country capital="Berlin" cca3="DEU" currency="EUR"
+		languages="German" latlng="51,9" name="Germany" population="80523700"
+		region="Europe" subregion="Western Europe">
+		<border>AUT</border>
+		<border>BEL</border>
+		<border>CZE</border>
+		<border>DNK</border>
+		<border>FRA</border>
+		<border>LUX</border>
+		<border>NLD</border>
+		<border>POL</border>
+		<border>CHE</border>
+	</country>
+	<country capital="Djibouti" cca3="DJI" currency="DJF"
+		languages="Arabic,French" latlng="11.5,43" name="Djibouti"
+		population="864618" region="Africa" subregion="Eastern Africa">
+		<border>ERI</border>
+		<border>ETH</border>
+		<border>SOM</border>
+	</country>
+	<country capital="Roseau" cca3="DMA" currency="XCD"
+		languages="English" latlng="15.41666666,-61.33333333" name="Dominica"
+		population="71293" region="Americas" subregion="Caribbean" />
+	<country capital="Copenhagen" cca3="DNK" currency="DKK"
+		languages="Danish" latlng="56,10" name="Denmark" population="5623501"
+		region="Europe" subregion="Northern Europe">
+		<border>DEU</border>
+	</country>
+	<country capital="Santo Domingo" cca3="DOM" currency="DOP"
+		languages="Spanish" latlng="19,-70.66666666" name="Dominican Republic"
+		population="9445281" region="Americas" subregion="Caribbean">
+		<border>HTI</border>
+	</country>
+	<country capital="Algiers" cca3="DZA" currency="DZD"
+		languages="Arabic" latlng="28,3" name="Algeria" population="37900000"
+		region="Africa" subregion="Northern Africa">
+		<border>TUN</border>
+		<border>LBY</border>
+		<border>NER</border>
+		<border>ESH</border>
+		<border>MRT</border>
+		<border>MLI</border>
+		<border>MAR</border>
+	</country>
+	<country capital="Quito" cca3="ECU" currency="USD"
+		languages="Spanish" latlng="-2,-77.5" name="Ecuador"
+		population="15617900" region="Americas" subregion="South America">
+		<border>COL</border>
+		<border>PER</border>
+	</country>
+	<country capital="Cairo" cca3="EGY" currency="EGP"
+		languages="Arabic" latlng="27,30" name="Egypt" population="83661000"
+		region="Africa" subregion="Northern Africa">
+		<border>ISR</border>
+		<border>LBY</border>
+		<border>PSE</border>
+		<border>SDN</border>
+	</country>
+	<country capital="Asmara" cca3="ERI" currency="ERN"
+		languages="Arabic,English,Tigrinya" latlng="15,39" name="Eritrea"
+		population="6333000" region="Africa" subregion="Eastern Africa">
+		<border>DJI</border>
+		<border>ETH</border>
+		<border>SDN</border>
+	</country>
+	<country capital="El Aaiún" cca3="ESH" currency="MAD,DZD,MRO"
+		languages="Berber,Hassaniya,Spanish" latlng="24.5,-13"
+		name="Western Sahara" population="567000" region="Africa"
+		subregion="Northern Africa">
+		<border>DZA</border>
+		<border>MRT</border>
+		<border>MAR</border>
+	</country>
+	<country capital="Madrid" cca3="ESP" currency="EUR"
+		languages="Spanish" latlng="40,-4" name="Spain" population="46704314"
+		region="Europe" subregion="Southern Europe">
+		<border>AND</border>
+		<border>FRA</border>
+		<border>GIB</border>
+		<border>PRT</border>
+		<border>MAR</border>
+	</country>
+	<country capital="Tallinn" cca3="EST" currency="EUR"
+		languages="Estonian" latlng="59,26" name="Estonia"
+		population="1286540" region="Europe" subregion="Northern Europe">
+		<border>LVA</border>
+		<border>RUS</border>
+	</country>
+	<country capital="Addis Ababa" cca3="ETH" currency="ETB"
+		languages="Amharic" latlng="8,38" name="Ethiopia"
+		population="86613986" region="Africa" subregion="Eastern Africa">
+		<border>DJI</border>
+		<border>ERI</border>
+		<border>KEN</border>
+		<border>SOM</border>
+		<border>SSD</border>
+		<border>SDN</border>
+	</country>
+	<country capital="Helsinki" cca3="FIN" currency="EUR"
+		languages="Finnish,Swedish" latlng="64,26" name="Finland"
+		population="5445883" region="Europe" subregion="Northern Europe">
+		<border>NOR</border>
+		<border>SWE</border>
+		<border>RUS</border>
+	</country>
+	<country capital="Suva" cca3="FJI" currency="FJD"
+		languages="English,Fijian,Fiji Hindi" latlng="-18,175" name="Fiji"
+		population="858038" region="Oceania" subregion="Melanesia" />
+	<country capital="Stanley" cca3="FLK" currency="FKP"
+		languages="English" latlng="-51.75,-59" name="Falkland Islands"
+		population="2563" region="Americas" subregion="South America" />
+	<country capital="Paris" cca3="FRA" currency="EUR"
+		languages="French" latlng="46,2" name="France" population="65806000"
+		region="Europe" subregion="Western Europe">
+		<border>AND</border>
+		<border>BEL</border>
+		<border>DEU</border>
+		<border>ITA</border>
+		<border>LUX</border>
+		<border>MCO</border>
+		<border>ESP</border>
+		<border>CHE</border>
+	</country>
+	<country capital="Tórshavn" cca3="FRO" currency="DKK"
+		languages="Danish,Faroese" latlng="62,-7" name="Faroe Islands"
+		population="48509" region="Europe" subregion="Northern Europe" />
+	<country capital="Palikir" cca3="FSM" currency="USD"
+		languages="English" latlng="6.91666666,158.25" name="Micronesia"
+		population="106104" region="Oceania" subregion="Micronesia" />
+	<country capital="Libreville" cca3="GAB" currency="XAF"
+		languages="French" latlng="-1,11.75" name="Gabon" population="1672000"
+		region="Africa" subregion="Middle Africa">
+		<border>CMR</border>
+		<border>COG</border>
+		<border>GNQ</border>
+	</country>
+	<country capital="London" cca3="GBR" currency="GBP"
+		languages="English" latlng="54,-2" name="United Kingdom"
+		population="63705000" region="Europe" subregion="Northern Europe">
+		<border>IRL</border>
+	</country>
+	<country capital="Tbilisi" cca3="GEO" currency="GEL"
+		languages="Georgian" latlng="42,43.5" name="Georgia"
+		population="4942157" region="Asia" subregion="Western Asia">
+		<border>ARM</border>
+		<border>AZE</border>
+		<border>RUS</border>
+		<border>TUR</border>
+	</country>
+	<country capital="St. Peter Port" cca3="GGY" currency="GBP"
+		languages="English,French,Guernésiais"
+		latlng="49.46666666,-2.58333333" name="Guernsey" population="62431"
+		region="Europe" subregion="Northern Europe" />
+	<country capital="Accra" cca3="GHA" currency="GHS"
+		languages="English" latlng="8,-2" name="Ghana" population="24658823"
+		region="Africa" subregion="Western Africa">
+		<border>BFA</border>
+		<border>CIV</border>
+		<border>TGO</border>
+	</country>
+	<country capital="Gibraltar" cca3="GIB" currency="GIP"
+		languages="English" latlng="36.13333333,-5.35" name="Gibraltar"
+		population="29752" region="Europe" subregion="Southern Europe">
+		<border>ESP</border>
+	</country>
+	<country capital="Conakry" cca3="GIN" currency="GNF"
+		languages="French" latlng="11,-10" name="Guinea" population="10824200"
+		region="Africa" subregion="Western Africa">
+		<border>CIV</border>
+		<border>GNB</border>
+		<border>LBR</border>
+		<border>MLI</border>
+		<border>SEN</border>
+		<border>SLE</border>
+	</country>
+	<country capital="Basse-Terre" cca3="GLP" currency="EUR"
+		languages="French" latlng="16.25,-61.583333" name="Guadeloupe"
+		population="403355" region="Americas" subregion="Caribbean" />
+	<country capital="Banjul" cca3="GMB" currency="GMD"
+		languages="English" latlng="13.46666666,-16.56666666" name="Gambia"
+		population="1782893" region="Africa" subregion="Western Africa">
+		<border>SEN</border>
+	</country>
+	<country capital="Bissau" cca3="GNB" currency="XOF"
+		languages="Portuguese,Upper Guinea Creole" latlng="12,-15"
+		name="Guinea-Bissau" population="1704000" region="Africa"
+		subregion="Western Africa">
+		<border>GIN</border>
+		<border>SEN</border>
+	</country>
+	<country capital="Malabo" cca3="GNQ" currency="XAF"
+		languages="French,Portuguese,Spanish" latlng="2,10"
+		name="Equatorial Guinea" population="1622000" region="Africa"
+		subregion="Middle Africa">
+		<border>CMR</border>
+		<border>GAB</border>
+	</country>
+	<country capital="Athens" cca3="GRC" currency="EUR"
+		languages="Greek" latlng="39,22" name="Greece" population="10815197"
+		region="Europe" subregion="Southern Europe">
+		<border>ALB</border>
+		<border>BGR</border>
+		<border>TUR</border>
+		<border>MKD</border>
+	</country>
+	<country capital="St. George's" cca3="GRD" currency="XCD"
+		languages="English" latlng="12.11666666,-61.66666666" name="Grenada"
+		population="103328" region="Americas" subregion="Caribbean" />
+	<country capital="Nuuk" cca3="GRL" currency="DKK"
+		languages="Greenlandic" latlng="72,-40" name="Greenland"
+		population="56370" region="Americas" subregion="Northern America" />
+	<country capital="Guatemala City" cca3="GTM" currency="GTQ"
+		languages="Spanish" latlng="15.5,-90.25" name="Guatemala"
+		population="15438384" region="Americas" subregion="Central America">
+		<border>BLZ</border>
+		<border>SLV</border>
+		<border>HND</border>
+		<border>MEX</border>
+	</country>
+	<country capital="Cayenne" cca3="GUF" currency="EUR"
+		languages="French" latlng="4,-53" name="French Guiana"
+		population="229040" region="Americas" subregion="South America">
+		<border>BRA</border>
+		<border>SUR</border>
+	</country>
+	<country capital="Hagåtña" cca3="GUM" currency="USD"
+		languages="Chamorro,English,Spanish" latlng="13.46666666,144.78333333"
+		name="Guam" population="159358" region="Oceania"
+		subregion="Micronesia" />
+	<country capital="Georgetown" cca3="GUY" currency="GYD"
+		languages="English" latlng="5,-59" name="Guyana" population="784894"
+		region="Americas" subregion="South America">
+		<border>BRA</border>
+		<border>SUR</border>
+		<border>VEN</border>
+	</country>
+	<country capital="City of Victoria" cca3="HKG" currency="HKD"
+		languages="English,Chinese" latlng="22.267,114.188" name="Hong Kong"
+		population="7184000" region="Asia" subregion="Eastern Asia">
+		<border>CHN</border>
+	</country>
+	<country cca3="HMD" currency="AUD" languages="English"
+		latlng="-53.1,72.51666666" name="Heard Island and McDonald Islands"
+		population="0" region="Antarctic" />
+	<country capital="Tegucigalpa" cca3="HND" currency="HNL"
+		languages="Spanish" latlng="15,-86.5" name="Honduras"
+		population="8555072" region="Americas" subregion="Central America">
+		<border>GTM</border>
+		<border>SLV</border>
+		<border>NIC</border>
+	</country>
+	<country capital="Zagreb" cca3="HRV" currency="HRK"
+		languages="Croatian" latlng="45.16666666,15.5" name="Croatia"
+		population="4290612" region="Europe" subregion="Southern Europe">
+		<border>BIH</border>
+		<border>HUN</border>
+		<border>MNE</border>
+		<border>SRB</border>
+		<border>SVN</border>
+	</country>
+	<country capital="Port-au-Prince" cca3="HTI" currency="HTG,USD"
+		languages="French,Haitian Creole" latlng="19,-72.41666666"
+		name="Haiti" population="10413211" region="Americas"
+		subregion="Caribbean">
+		<border>DOM</border>
+	</country>
+	<country capital="Budapest" cca3="HUN" currency="HUF"
+		languages="Hungarian" latlng="47,20" name="Hungary"
+		population="9906000" region="Europe" subregion="Eastern Europe">
+		<border>AUT</border>
+		<border>HRV</border>
+		<border>ROU</border>
+		<border>SRB</border>
+		<border>SVK</border>
+		<border>SVN</border>
+		<border>UKR</border>
+	</country>
+	<country capital="Jakarta" cca3="IDN" currency="IDR"
+		languages="Indonesian" latlng="-5,120" name="Indonesia"
+		population="237641326" region="Asia" subregion="South-Eastern Asia">
+		<border>TLS</border>
+		<border>MYS</border>
+		<border>PNG</border>
+	</country>
+	<country capital="Douglas" cca3="IMN" currency="GBP"
+		languages="English,Manx" latlng="54.25,-4.5" name="Isle of Man"
+		population="84497" region="Europe" subregion="Northern Europe" />
+	<country capital="New Delhi" cca3="IND" currency="INR"
+		languages="English,Hindi,Tamil" latlng="20,77" name="India"
+		population="1236670000" region="Asia" subregion="Southern Asia">
+		<border>BGD</border>
+		<border>BTN</border>
+		<border>MMR</border>
+		<border>CHN</border>
+		<border>NPL</border>
+		<border>PAK</border>
+	</country>
+	<country capital="Diego Garcia" cca3="IOT" currency="USD"
+		languages="English" latlng="-6,71.5"
+		name="British Indian Ocean Territory" population="3000"
+		region="Africa" subregion="Eastern Africa" />
+	<country capital="Dublin" cca3="IRL" currency="EUR"
+		languages="English,Irish" latlng="53,-8" name="Ireland"
+		population="6378000" region="Europe" subregion="Northern Europe">
+		<border>GBR</border>
+	</country>
+	<country capital="Tehran" cca3="IRN" currency="IRR"
+		languages="Persian" latlng="32,53" name="Iran" population="77068000"
+		region="Asia" subregion="Southern Asia">
+		<border>AFG</border>
+		<border>ARM</border>
+		<border>AZE</border>
+		<border>IRQ</border>
+		<border>PAK</border>
+		<border>TUR</border>
+		<border>TKM</border>
+	</country>
+	<country capital="Baghdad" cca3="IRQ" currency="IQD"
+		languages="Arabic,Aramaic,Sorani" latlng="33,44" name="Iraq"
+		population="36004552" region="Asia" subregion="Western Asia">
+		<border>IRN</border>
+		<border>JOR</border>
+		<border>KWT</border>
+		<border>SAU</border>
+		<border>SYR</border>
+		<border>TUR</border>
+	</country>
+	<country capital="Reykjavik" cca3="ISL" currency="ISK"
+		languages="Icelandic" latlng="65,-18" name="Iceland"
+		population="325010" region="Europe" subregion="Northern Europe" />
+	<country capital="Jerusalem" cca3="ISR" currency="ILS"
+		languages="Arabic,Hebrew" latlng="31.47,35.13" name="Israel"
+		population="8092700" region="Asia" subregion="Western Asia">
+		<border>EGY</border>
+		<border>JOR</border>
+		<border>LBN</border>
+		<border>PSE</border>
+		<border>SYR</border>
+	</country>
+	<country capital="Rome" cca3="ITA" currency="EUR"
+		languages="Italian" latlng="42.83333333,12.83333333" name="Italy"
+		population="59829079" region="Europe" subregion="Southern Europe">
+		<border>AUT</border>
+		<border>FRA</border>
+		<border>SMR</border>
+		<border>SVN</border>
+		<border>CHE</border>
+		<border>VAT</border>
+	</country>
+	<country capital="Kingston" cca3="JAM" currency="JMD"
+		languages="English,Jamaican Patois" latlng="18.25,-77.5"
+		name="Jamaica" population="2711476" region="Americas"
+		subregion="Caribbean" />
+	<country capital="Saint Helier" cca3="JEY" currency="GBP"
+		languages="English,French,Jèrriais" latlng="49.25,-2.16666666"
+		name="Jersey" population="97857" region="Europe"
+		subregion="Northern Europe" />
+	<country capital="Amman" cca3="JOR" currency="JOD"
+		languages="Arabic" latlng="31,36" name="Jordan" population="6512600"
+		region="Asia" subregion="Western Asia">
+		<border>IRQ</border>
+		<border>ISR</border>
+		<border>PSE</border>
+		<border>SAU</border>
+		<border>SYR</border>
+	</country>
+	<country capital="Tokyo" cca3="JPN" currency="JPY"
+		languages="Japanese" latlng="36,138" name="Japan"
+		population="127290000" region="Asia" subregion="Eastern Asia" />
+	<country capital="Astana" cca3="KAZ" currency="KZT"
+		languages="Kazakh,Russian" latlng="48,68" name="Kazakhstan"
+		population="17099000" region="Asia" subregion="Central Asia">
+		<border>CHN</border>
+		<border>KGZ</border>
+		<border>RUS</border>
+		<border>TKM</border>
+		<border>UZB</border>
+	</country>
+	<country capital="Nairobi" cca3="KEN" currency="KES"
+		languages="English,Swahili" latlng="1,38" name="Kenya"
+		population="44354000" region="Africa" subregion="Eastern Africa">
+		<border>ETH</border>
+		<border>SOM</border>
+		<border>SSD</border>
+		<border>TZA</border>
+		<border>UGA</border>
+	</country>
+	<country capital="Bishkek" cca3="KGZ" currency="KGS"
+		languages="Kyrgyz,Russian" latlng="41,75" name="Kyrgyzstan"
+		population="5551900" region="Asia" subregion="Central Asia">
+		<border>CHN</border>
+		<border>KAZ</border>
+		<border>TJK</border>
+		<border>UZB</border>
+	</country>
+	<country capital="Phnom Penh" cca3="KHM" currency="KHR"
+		languages="Khmer" latlng="13,105" name="Cambodia"
+		population="15135000" region="Asia" subregion="South-Eastern Asia">
+		<border>LAO</border>
+		<border>THA</border>
+		<border>VNM</border>
+	</country>
+	<country capital="South Tarawa" cca3="KIR" currency="AUD"
+		languages="English,Gilbertese" latlng="1.41666666,173" name="Kiribati"
+		population="106461" region="Oceania" subregion="Micronesia" />
+	<country capital="Basseterre" cca3="KNA" currency="XCD"
+		languages="English" latlng="17.33333333,-62.75"
+		name="Saint Kitts and Nevis" population="54000" region="Americas"
+		subregion="Caribbean" />
+	<country capital="Seoul" cca3="KOR" currency="KRW"
+		languages="Korean" latlng="37,127.5" name="South Korea"
+		population="50219669" region="Asia" subregion="Eastern Asia">
+		<border>PRK</border>
+	</country>
+	<country capital="Kuwait City" cca3="KWT" currency="KWD"
+		languages="Arabic" latlng="29.5,45.75" name="Kuwait"
+		population="3582054" region="Asia" subregion="Western Asia">
+		<border>IRQ</border>
+		<border>SAU</border>
+	</country>
+	<country capital="Vientiane" cca3="LAO" currency="LAK"
+		languages="Lao" latlng="18,105" name="Laos" population="6580800"
+		region="Asia" subregion="South-Eastern Asia">
+		<border>MMR</border>
+		<border>KHM</border>
+		<border>CHN</border>
+		<border>THA</border>
+		<border>VNM</border>
+	</country>
+	<country capital="Beirut" cca3="LBN" currency="LBP"
+		languages="Arabic,French" latlng="33.83333333,35.83333333"
+		name="Lebanon" population="4822000" region="Asia"
+		subregion="Western Asia">
+		<border>ISR</border>
+		<border>SYR</border>
+	</country>
+	<country capital="Monrovia" cca3="LBR" currency="LRD"
+		languages="English" latlng="6.5,-9.5" name="Liberia"
+		population="4294000" region="Africa" subregion="Western Africa">
+		<border>GIN</border>
+		<border>CIV</border>
+		<border>SLE</border>
+	</country>
+	<country capital="Tripoli" cca3="LBY" currency="LYD"
+		languages="Arabic" latlng="25,17" name="Libya" population="6202000"
+		region="Africa" subregion="Northern Africa">
+		<border>DZA</border>
+		<border>TCD</border>
+		<border>EGY</border>
+		<border>NER</border>
+		<border>SDN</border>
+		<border>TUN</border>
+	</country>
+	<country capital="Castries" cca3="LCA" currency="XCD"
+		languages="English" latlng="13.88333333,-60.96666666"
+		name="Saint Lucia" population="166526" region="Americas"
+		subregion="Caribbean" />
+	<country capital="Vaduz" cca3="LIE" currency="CHF"
+		languages="German" latlng="47.26666666,9.53333333"
+		name="Liechtenstein" population="36842" region="Europe"
+		subregion="Western Europe">
+		<border>AUT</border>
+		<border>CHE</border>
+	</country>
+	<country capital="Colombo" cca3="LKA" currency="LKR"
+		languages="Sinhala,Tamil" latlng="7,81" name="Sri Lanka"
+		population="20277597" region="Asia" subregion="Southern Asia">
+		<border>IND</border>
+	</country>
+	<country capital="Maseru" cca3="LSO" currency="LSL,ZAR"
+		languages="English,Sotho" latlng="-29.5,28.5" name="Lesotho"
+		population="2074000" region="Africa" subregion="Southern Africa">
+		<border>ZAF</border>
+	</country>
+	<country capital="Vilnius" cca3="LTU" currency="EUR"
+		languages="Lithuanian" latlng="56,24" name="Lithuania"
+		population="2950684" region="Europe" subregion="Northern Europe">
+		<border>BLR</border>
+		<border>LVA</border>
+		<border>POL</border>
+		<border>RUS</border>
+	</country>
+	<country capital="Luxembourg" cca3="LUX" currency="EUR"
+		languages="German,French,Luxembourgish" latlng="49.75,6.16666666"
+		name="Luxembourg" population="537000" region="Europe"
+		subregion="Western Europe">
+		<border>BEL</border>
+		<border>FRA</border>
+		<border>DEU</border>
+	</country>
+	<country capital="Riga" cca3="LVA" currency="EUR"
+		languages="Latvian" latlng="57,25" name="Latvia" population="2014000"
+		region="Europe" subregion="Northern Europe">
+		<border>BLR</border>
+		<border>EST</border>
+		<border>LTU</border>
+		<border>RUS</border>
+	</country>
+	<country cca3="MAC" currency="MOP"
+		languages="Portuguese,Chinese" latlng="22.16666666,113.55"
+		name="Macau" population="591900" region="Asia"
+		subregion="Eastern Asia">
+		<border>CHN</border>
+	</country>
+	<country capital="Marigot" cca3="MAF" currency="EUR"
+		languages="French" latlng="18.08333333,-63.95" name="Saint Martin"
+		population="77741" region="Americas" subregion="Caribbean">
+		<border>SXM</border>
+	</country>
+	<country capital="Rabat" cca3="MAR" currency="MAD"
+		languages="Arabic,Berber" latlng="32,-5" name="Morocco"
+		population="33087700" region="Africa" subregion="Northern Africa">
+		<border>DZA</border>
+		<border>ESH</border>
+		<border>ESP</border>
+	</country>
+	<country capital="Monaco" cca3="MCO" currency="EUR"
+		languages="French" latlng="43.73333333,7.4" name="Monaco"
+		population="36136" region="Europe" subregion="Western Europe">
+		<border>FRA</border>
+	</country>
+	<country capital="Chișinău" cca3="MDA" currency="MDL"
+		languages="Moldavian" latlng="47,29" name="Moldova"
+		population="3559500" region="Europe" subregion="Eastern Europe">
+		<border>ROU</border>
+		<border>UKR</border>
+	</country>
+	<country capital="Antananarivo" cca3="MDG" currency="MGA"
+		languages="French,Malagasy" latlng="-20,47" name="Madagascar"
+		population="20696070" region="Africa" subregion="Eastern Africa" />
+	<country capital="Malé" cca3="MDV" currency="MVR"
+		languages="Maldivian" latlng="3.25,73" name="Maldives"
+		population="317280" region="Asia" subregion="Southern Asia" />
+	<country capital="Mexico City" cca3="MEX" currency="MXN"
+		languages="Spanish" latlng="23,-102" name="Mexico"
+		population="118395054" region="Americas" subregion="Northern America">
+		<border>BLZ</border>
+		<border>GTM</border>
+		<border>USA</border>
+	</country>
+	<country capital="Majuro" cca3="MHL" currency="USD"
+		languages="English,Marshallese" latlng="9,168" name="Marshall Islands"
+		population="56086" region="Oceania" subregion="Micronesia" />
+	<country capital="Skopje" cca3="MKD" currency="MKD"
+		languages="Macedonian" latlng="41.83333333,22" name="Macedonia"
+		population="2058539" region="Europe" subregion="Southern Europe">
+		<border>ALB</border>
+		<border>BGR</border>
+		<border>GRC</border>
+		<border>SRB</border>
+	</country>
+	<country capital="Bamako" cca3="MLI" currency="XOF"
+		languages="French" latlng="17,-4" name="Mali" population="15302000"
+		region="Africa" subregion="Western Africa">
+		<border>DZA</border>
+		<border>BFA</border>
+		<border>GIN</border>
+		<border>CIV</border>
+		<border>MRT</border>
+		<border>NER</border>
+		<border>SEN</border>
+	</country>
+	<country capital="Valletta" cca3="MLT" currency="EUR"
+		languages="English,Maltese" latlng="35.83333333,14.58333333"
+		name="Malta" population="416055" region="Europe"
+		subregion="Southern Europe" />
+	<country capital="Naypyidaw" cca3="MMR" currency="MMK"
+		languages="Burmese" latlng="22,98" name="Myanmar"
+		population="61120000" region="Asia" subregion="South-Eastern Asia">
+		<border>BGD</border>
+		<border>CHN</border>
+		<border>IND</border>
+		<border>LAO</border>
+		<border>THA</border>
+	</country>
+	<country capital="Podgorica" cca3="MNE" currency="EUR"
+		languages="Montenegrin" latlng="42.5,19.3" name="Montenegro"
+		population="620029" region="Europe" subregion="Southern Europe">
+		<border>ALB</border>
+		<border>BIH</border>
+		<border>HRV</border>
+		<border>SRB</border>
+	</country>
+	<country capital="Ulan Bator" cca3="MNG" currency="MNT"
+		languages="Mongolian" latlng="46,105" name="Mongolia"
+		population="2754685" region="Asia" subregion="Eastern Asia">
+		<border>CHN</border>
+		<border>RUS</border>
+	</country>
+	<country capital="Saipan" cca3="MNP" currency="USD"
+		languages="Carolinian,Chamorro,English" latlng="15.2,145.75"
+		name="Northern Mariana Islands" population="53883" region="Oceania"
+		subregion="Micronesia" />
+	<country capital="Maputo" cca3="MOZ" currency="MZN"
+		languages="Portuguese" latlng="-18.25,35" name="Mozambique"
+		population="23700715" region="Africa" subregion="Eastern Africa">
+		<border>MWI</border>
+		<border>ZAF</border>
+		<border>SWZ</border>
+		<border>TZA</border>
+		<border>ZMB</border>
+		<border>ZWE</border>
+	</country>
+	<country capital="Nouakchott" cca3="MRT" currency="MRO"
+		languages="Arabic" latlng="20,-12" name="Mauritania"
+		population="3461041" region="Africa" subregion="Western Africa">
+		<border>DZA</border>
+		<border>MLI</border>
+		<border>SEN</border>
+		<border>ESH</border>
+	</country>
+	<country capital="Plymouth" cca3="MSR" currency="XCD"
+		languages="English" latlng="16.75,-62.2" name="Montserrat"
+		population="4922" region="Americas" subregion="Caribbean" />
+	<country capital="Fort-de-France" cca3="MTQ" currency="EUR"
+		languages="French" latlng="14.666667,-61" name="Martinique"
+		population="394173" region="Americas" subregion="Caribbean" />
+	<country capital="Port Louis" cca3="MUS" currency="MUR"
+		languages="English,French,Mauritian Creole"
+		latlng="-20.28333333,57.55" name="Mauritius" population="1257900"
+		region="Africa" subregion="Eastern Africa" />
+	<country capital="Lilongwe" cca3="MWI" currency="MWK"
+		languages="English,Chewa" latlng="-13.5,34" name="Malawi"
+		population="16363000" region="Africa" subregion="Eastern Africa">
+		<border>MOZ</border>
+		<border>TZA</border>
+		<border>ZMB</border>
+	</country>
+	<country capital="Kuala Lumpur" cca3="MYS" currency="MYR"
+		languages="English,Malay" latlng="2.5,112.5" name="Malaysia"
+		population="29793600" region="Asia" subregion="South-Eastern Asia">
+		<border>BRN</border>
+		<border>IDN</border>
+		<border>THA</border>
+	</country>
+	<country capital="Mamoudzou" cca3="MYT" currency="EUR"
+		languages="French" latlng="-12.83333333,45.16666666" name="Mayotte"
+		population="212600" region="Africa" subregion="Eastern Africa" />
+	<country capital="Windhoek" cca3="NAM" currency="NAD,ZAR"
+		languages="Afrikaans,German,English,Herero,Khoekhoe,Kwangali,Lozi,Ndonga,Tswana"
+		latlng="-22,17" name="Namibia" population="2113077" region="Africa"
+		subregion="Southern Africa">
+		<border>AGO</border>
+		<border>BWA</border>
+		<border>ZAF</border>
+		<border>ZMB</border>
+	</country>
+	<country capital="Nouméa" cca3="NCL" currency="XPF"
+		languages="French" latlng="-21.5,165.5" name="New Caledonia"
+		population="258958" region="Oceania" subregion="Melanesia" />
+	<country capital="Niamey" cca3="NER" currency="XOF"
+		languages="French" latlng="16,8" name="Niger" population="17129076"
+		region="Africa" subregion="Western Africa">
+		<border>DZA</border>
+		<border>BEN</border>
+		<border>BFA</border>
+		<border>TCD</border>
+		<border>LBY</border>
+		<border>MLI</border>
+		<border>NGA</border>
+	</country>
+	<country capital="Kingston" cca3="NFK" currency="AUD"
+		languages="English,Norfuk" latlng="-29.03333333,167.95"
+		name="Norfolk Island" population="2302" region="Oceania"
+		subregion="Australia and New Zealand" />
+	<country capital="Abuja" cca3="NGA" currency="NGN"
+		languages="English" latlng="10,8" name="Nigeria"
+		population="173615000" region="Africa" subregion="Western Africa">
+		<border>BEN</border>
+		<border>CMR</border>
+		<border>TCD</border>
+		<border>NER</border>
+	</country>
+	<country capital="Managua" cca3="NIC" currency="NIO"
+		languages="Spanish" latlng="13,-85" name="Nicaragua"
+		population="6071045" region="Americas" subregion="Central America">
+		<border>CRI</border>
+		<border>HND</border>
+	</country>
+	<country capital="Alofi" cca3="NIU" currency="NZD"
+		languages="English,Niuean" latlng="-19.03333333,-169.86666666"
+		name="Niue" population="1613" region="Oceania" subregion="Polynesia" />
+	<country capital="Amsterdam" cca3="NLD" currency="EUR"
+		languages="Dutch" latlng="52.5,5.75" name="Netherlands"
+		population="16807300" region="Europe" subregion="Western Europe">
+		<border>BEL</border>
+		<border>DEU</border>
+	</country>
+	<country capital="Oslo" cca3="NOR" currency="NOK"
+		languages="Norwegian Nynorsk,Norwegian Bokmål,Sami" latlng="62,10"
+		name="Norway" population="5077798" region="Europe"
+		subregion="Northern Europe">
+		<border>FIN</border>
+		<border>SWE</border>
+		<border>RUS</border>
+	</country>
+	<country capital="Kathmandu" cca3="NPL" currency="NPR"
+		languages="Nepali" latlng="28,84" name="Nepal" population="26494504"
+		region="Asia" subregion="Southern Asia">
+		<border>CHN</border>
+		<border>IND</border>
+	</country>
+	<country capital="Yaren" cca3="NRU" currency="AUD"
+		languages="English,Nauru" latlng="-0.53333333,166.91666666"
+		name="Nauru" population="9945" region="Oceania" subregion="Micronesia" />
+	<country capital="Wellington" cca3="NZL" currency="NZD"
+		languages="English,Māori,New Zealand Sign Language" latlng="-41,174"
+		name="New Zealand" population="4478810" region="Oceania"
+		subregion="Australia and New Zealand" />
+	<country capital="Muscat" cca3="OMN" currency="OMR"
+		languages="Arabic" latlng="21,57" name="Oman" population="3929000"
+		region="Asia" subregion="Western Asia">
+		<border>SAU</border>
+		<border>ARE</border>
+		<border>YEM</border>
+	</country>
+	<country capital="Islamabad" cca3="PAK" currency="PKR"
+		languages="English,Urdu" latlng="30,70" name="Pakistan"
+		population="184845000" region="Asia" subregion="Southern Asia">
+		<border>AFG</border>
+		<border>CHN</border>
+		<border>IND</border>
+		<border>IRN</border>
+	</country>
+	<country capital="Panama City" cca3="PAN" currency="PAB,USD"
+		languages="Spanish" latlng="9,-80" name="Panama" population="3405813"
+		region="Americas" subregion="Central America">
+		<border>COL</border>
+		<border>CRI</border>
+	</country>
+	<country capital="Adamstown" cca3="PCN" currency="NZD"
+		languages="English" latlng="-25.06666666,-130.1"
+		name="Pitcairn Islands" population="56" region="Oceania"
+		subregion="Polynesia" />
+	<country capital="Lima" cca3="PER" currency="PEN"
+		languages="Aymara,Quechua,Spanish" latlng="-10,-76" name="Peru"
+		population="30475144" region="Americas" subregion="South America">
+		<border>BOL</border>
+		<border>BRA</border>
+		<border>CHL</border>
+		<border>COL</border>
+		<border>ECU</border>
+	</country>
+	<country capital="Manila" cca3="PHL" currency="PHP"
+		languages="English,Filipino" latlng="13,122" name="Philippines"
+		population="98678000" region="Asia" subregion="South-Eastern Asia" />
+	<country capital="Ngerulmud" cca3="PLW" currency="USD"
+		languages="English,Palauan" latlng="7.5,134.5" name="Palau"
+		population="20901" region="Oceania" subregion="Micronesia" />
+	<country capital="Port Moresby" cca3="PNG" currency="PGK"
+		languages="English,Hiri Motu,Tok Pisin" latlng="-6,147"
+		name="Papua New Guinea" population="7059653" region="Oceania"
+		subregion="Melanesia">
+		<border>IDN</border>
+	</country>
+	<country capital="Warsaw" cca3="POL" currency="PLN"
+		languages="Polish" latlng="52,20" name="Poland" population="38533299"
+		region="Europe" subregion="Eastern Europe">
+		<border>BLR</border>
+		<border>CZE</border>
+		<border>DEU</border>
+		<border>LTU</border>
+		<border>RUS</border>
+		<border>SVK</border>
+		<border>UKR</border>
+	</country>
+	<country capital="San Juan" cca3="PRI" currency="USD"
+		languages="English,Spanish" latlng="18.25,-66.5" name="Puerto Rico"
+		population="3667084" region="Americas" subregion="Caribbean" />
+	<country capital="Pyongyang" cca3="PRK" currency="KPW"
+		languages="Korean" latlng="40,127" name="North Korea"
+		population="24895000" region="Asia" subregion="Eastern Asia">
+		<border>CHN</border>
+		<border>KOR</border>
+		<border>RUS</border>
+	</country>
+	<country capital="Lisbon" cca3="PRT" currency="EUR"
+		languages="Portuguese" latlng="39.5,-8" name="Portugal"
+		population="10562178" region="Europe" subregion="Southern Europe">
+		<border>ESP</border>
+	</country>
+	<country capital="Asunción" cca3="PRY" currency="PYG"
+		languages="Guaraní,Spanish" latlng="-23,-58" name="Paraguay"
+		population="6783374" region="Americas" subregion="South America">
+		<border>ARG</border>
+		<border>BOL</border>
+		<border>BRA</border>
+	</country>
+	<country capital="Ramallah" cca3="PSE" currency="ILS"
+		languages="Arabic" latlng="31.9,35.2" name="Palestine"
+		population="4550368" region="Asia" subregion="Western Asia">
+		<border>ISR</border>
+		<border>EGY</border>
+		<border>JOR</border>
+	</country>
+	<country capital="Papeetē" cca3="PYF" currency="XPF"
+		languages="French" latlng="-15,-140" name="French Polynesia"
+		population="268270" region="Oceania" subregion="Polynesia" />
+	<country capital="Doha" cca3="QAT" currency="QAR"
+		languages="Arabic" latlng="25.5,51.25" name="Qatar"
+		population="2024707" region="Asia" subregion="Western Asia">
+		<border>SAU</border>
+	</country>
+	<country capital="Saint-Denis" cca3="REU" currency="EUR"
+		languages="French" latlng="-21.15,55.5" name="Réunion"
+		population="821136" region="Africa" subregion="Eastern Africa" />
+	<country capital="Bucharest" cca3="ROU" currency="RON"
+		languages="Romanian" latlng="46,25" name="Romania"
+		population="20121641" region="Europe" subregion="Eastern Europe">
+		<border>BGR</border>
+		<border>HUN</border>
+		<border>MDA</border>
+		<border>SRB</border>
+		<border>UKR</border>
+	</country>
+	<country capital="Moscow" cca3="RUS" currency="RUB"
+		languages="Russian" latlng="60,100" name="Russia"
+		population="143500000" region="Europe" subregion="Eastern Europe">
+		<border>AZE</border>
+		<border>BLR</border>
+		<border>CHN</border>
+		<border>EST</border>
+		<border>FIN</border>
+		<border>GEO</border>
+		<border>KAZ</border>
+		<border>PRK</border>
+		<border>LVA</border>
+		<border>LTU</border>
+		<border>MNG</border>
+		<border>NOR</border>
+		<border>POL</border>
+		<border>UKR</border>
+	</country>
+	<country capital="Kigali" cca3="RWA" currency="RWF"
+		languages="English,French,Kinyarwanda" latlng="-2,30" name="Rwanda"
+		population="10537222" region="Africa" subregion="Eastern Africa">
+		<border>BDI</border>
+		<border>COD</border>
+		<border>TZA</border>
+		<border>UGA</border>
+	</country>
+	<country capital="Riyadh" cca3="SAU" currency="SAR"
+		languages="Arabic" latlng="25,45" name="Saudi Arabia"
+		population="29994272" region="Asia" subregion="Western Asia">
+		<border>IRQ</border>
+		<border>JOR</border>
+		<border>KWT</border>
+		<border>OMN</border>
+		<border>QAT</border>
+		<border>ARE</border>
+		<border>YEM</border>
+	</country>
+	<country capital="Khartoum" cca3="SDN" currency="SDG"
+		languages="Arabic,English" latlng="15,30" name="Sudan"
+		population="37964000" region="Africa" subregion="Northern Africa">
+		<border>CAF</border>
+		<border>TCD</border>
+		<border>EGY</border>
+		<border>ERI</border>
+		<border>ETH</border>
+		<border>LBY</border>
+		<border>SSD</border>
+	</country>
+	<country capital="Dakar" cca3="SEN" currency="XOF"
+		languages="French" latlng="14,-14" name="Senegal"
+		population="13567338" region="Africa" subregion="Western Africa">
+		<border>GMB</border>
+		<border>GIN</border>
+		<border>GNB</border>
+		<border>MLI</border>
+		<border>MRT</border>
+	</country>
+	<country capital="Singapore" cca3="SGP" currency="SGD"
+		languages="Chinese,English,Malay,Tamil" latlng="1.36666666,103.8"
+		name="Singapore" population="5399200" region="Asia"
+		subregion="South-Eastern Asia" />
+	<country capital="King Edward Point" cca3="SGS" currency="GBP"
+		languages="English" latlng="-54.5,-37" name="South Georgia"
+		population="30" region="Antarctic" />
+	<country capital="Longyearbyen" cca3="SJM" currency="NOK"
+		languages="Norwegian" latlng="78,20" name="Svalbard and Jan Mayen"
+		population="2655" region="Europe" subregion="Northern Europe" />
+	<country capital="Honiara" cca3="SLB" currency="SBD"
+		languages="English" latlng="-8,159" name="Solomon Islands"
+		population="561000" region="Oceania" subregion="Melanesia" />
+	<country capital="Freetown" cca3="SLE" currency="SLL"
+		languages="English" latlng="8.5,-11.5" name="Sierra Leone"
+		population="6190280" region="Africa" subregion="Western Africa">
+		<border>GIN</border>
+		<border>LBR</border>
+	</country>
+	<country capital="San Salvador" cca3="SLV" currency="SVC,USD"
+		languages="Spanish" latlng="13.83333333,-88.91666666"
+		name="El Salvador" population="6340000" region="Americas"
+		subregion="Central America">
+		<border>GTM</border>
+		<border>HND</border>
+	</country>
+	<country capital="City of San Marino" cca3="SMR" currency="EUR"
+		languages="Italian" latlng="43.76666666,12.41666666" name="San Marino"
+		population="32509" region="Europe" subregion="Southern Europe">
+		<border>ITA</border>
+	</country>
+	<country capital="Mogadishu" cca3="SOM" currency="SOS"
+		languages="Arabic,Somali" latlng="10,49" name="Somalia"
+		population="10496000" region="Africa" subregion="Eastern Africa">
+		<border>DJI</border>
+		<border>ETH</border>
+		<border>KEN</border>
+	</country>
+	<country capital="Saint-Pierre" cca3="SPM" currency="EUR"
+		languages="French" latlng="46.83333333,-56.33333333"
+		name="Saint Pierre and Miquelon" population="6081" region="Americas"
+		subregion="Northern America" />
+	<country capital="Belgrade" cca3="SRB" currency="RSD"
+		languages="Serbian" latlng="44,21" name="Serbia" population="7181505"
+		region="Europe" subregion="Southern Europe">
+		<border>BIH</border>
+		<border>BGR</border>
+		<border>HRV</border>
+		<border>HUN</border>
+		<border>MKD</border>
+		<border>MNE</border>
+		<border>ROU</border>
+	</country>
+	<country capital="Juba" cca3="SSD" currency="SSP"
+		languages="English" latlng="7,30" name="South Sudan"
+		population="11296000" region="Africa" subregion="Middle Africa">
+		<border>CAF</border>
+		<border>COD</border>
+		<border>ETH</border>
+		<border>KEN</border>
+		<border>SDN</border>
+		<border>UGA</border>
+	</country>
+	<country capital="São Tomé" cca3="STP" currency="STD"
+		languages="Portuguese" latlng="1,7" name="São Tomé and Príncipe"
+		population="187356" region="Africa" subregion="Middle Africa" />
+	<country capital="Paramaribo" cca3="SUR" currency="SRD"
+		languages="Dutch" latlng="4,-56" name="Suriname" population="534189"
+		region="Americas" subregion="South America">
+		<border>BRA</border>
+		<border>GUF</border>
+		<border>GUY</border>
+	</country>
+	<country capital="Bratislava" cca3="SVK" currency="EUR"
+		languages="Slovak" latlng="48.66666666,19.5" name="Slovakia"
+		population="5412008" region="Europe" subregion="Central Europe">
+		<border>AUT</border>
+		<border>CZE</border>
+		<border>HUN</border>
+		<border>POL</border>
+		<border>UKR</border>
+	</country>
+	<country capital="Ljubljana" cca3="SVN" currency="EUR"
+		languages="Slovene" latlng="46.11666666,14.81666666" name="Slovenia"
+		population="2061405" region="Europe" subregion="Southern Europe">
+		<border>AUT</border>
+		<border>HRV</border>
+		<border>ITA</border>
+		<border>HUN</border>
+	</country>
+	<country capital="Stockholm" cca3="SWE" currency="SEK"
+		languages="Swedish" latlng="62,15" name="Sweden" population="9625444"
+		region="Europe" subregion="Northern Europe">
+		<border>FIN</border>
+		<border>NOR</border>
+	</country>
+	<country capital="Lobamba" cca3="SWZ" currency="SZL"
+		languages="English,Swazi" latlng="-26.5,31.5" name="Swaziland"
+		population="1250000" region="Africa" subregion="Southern Africa">
+		<border>MOZ</border>
+		<border>ZAF</border>
+	</country>
+	<country capital="Philipsburg" cca3="SXM" currency="ANG"
+		languages="English,French,Dutch" latlng="18.033333,-63.05"
+		name="Sint Maarten" population="37429" region="Americas"
+		subregion="Caribbean">
+		<border>MAF</border>
+	</country>
+	<country capital="Victoria" cca3="SYC" currency="SCR"
+		languages="Seychellois Creole,English,French"
+		latlng="-4.58333333,55.66666666" name="Seychelles" population="90945"
+		region="Africa" subregion="Eastern Africa" />
+	<country capital="Damascus" cca3="SYR" currency="SYP"
+		languages="Arabic" latlng="35,38" name="Syria" population="21898000"
+		region="Asia" subregion="Western Asia">
+		<border>IRQ</border>
+		<border>ISR</border>
+		<border>JOR</border>
+		<border>LBN</border>
+		<border>TUR</border>
+	</country>
+	<country capital="Cockburn Town" cca3="TCA" currency="USD"
+		languages="English" latlng="21.75,-71.58333333"
+		name="Turks and Caicos Islands" population="31458" region="Americas"
+		subregion="Caribbean" />
+	<country capital="N'Djamena" cca3="TCD" currency="XAF"
+		languages="Arabic,French" latlng="15,19" name="Chad"
+		population="12825000" region="Africa" subregion="Middle Africa">
+		<border>CMR</border>
+		<border>CAF</border>
+		<border>LBY</border>
+		<border>NER</border>
+		<border>NGA</border>
+		<border>SDN</border>
+	</country>
+	<country capital="Lomé" cca3="TGO" currency="XOF"
+		languages="French" latlng="8,1.16666666" name="Togo"
+		population="6191155" region="Africa" subregion="Western Africa">
+		<border>BEN</border>
+		<border>BFA</border>
+		<border>GHA</border>
+	</country>
+	<country capital="Bangkok" cca3="THA" currency="THB"
+		languages="Thai" latlng="15,100" name="Thailand" population="65926261"
+		region="Asia" subregion="South-Eastern Asia">
+		<border>MMR</border>
+		<border>KHM</border>
+		<border>LAO</border>
+		<border>MYS</border>
+	</country>
+	<country capital="Dushanbe" cca3="TJK" currency="TJS"
+		languages="Russian,Tajik" latlng="39,71" name="Tajikistan"
+		population="8000000" region="Asia" subregion="Central Asia">
+		<border>AFG</border>
+		<border>CHN</border>
+		<border>KGZ</border>
+		<border>UZB</border>
+	</country>
+	<country capital="Fakaofo" cca3="TKL" currency="NZD"
+		languages="English,Samoan,Tokelauan" latlng="-9,-172" name="Tokelau"
+		population="1411" region="Oceania" subregion="Polynesia" />
+	<country capital="Ashgabat" cca3="TKM" currency="TMT"
+		languages="Russian,Turkmen" latlng="40,60" name="Turkmenistan"
+		population="5240000" region="Asia" subregion="Central Asia">
+		<border>AFG</border>
+		<border>IRN</border>
+		<border>KAZ</border>
+		<border>UZB</border>
+	</country>
+	<country capital="Dili" cca3="TLS" currency="USD"
+		languages="Portuguese,Tetum" latlng="-8.83333333,125.91666666"
+		name="Timor-Leste" population="1172390" region="Asia"
+		subregion="South-Eastern Asia">
+		<border>IDN</border>
+	</country>
+	<country capital="Nuku'alofa" cca3="TON" currency="TOP"
+		languages="English,Tongan" latlng="-20,-175" name="Tonga"
+		population="103036" region="Oceania" subregion="Polynesia" />
+	<country capital="Port of Spain" cca3="TTO" currency="TTD"
+		languages="English" latlng="11,-61" name="Trinidad and Tobago"
+		population="1328019" region="Americas" subregion="Caribbean" />
+	<country capital="Tunis" cca3="TUN" currency="TND"
+		languages="Arabic" latlng="34,9" name="Tunisia" population="10833431"
+		region="Africa" subregion="Northern Africa">
+		<border>DZA</border>
+		<border>LBY</border>
+	</country>
+	<country capital="Ankara" cca3="TUR" currency="TRY"
+		languages="Turkish" latlng="39,35" name="Turkey" population="75627384"
+		region="Asia" subregion="Western Asia">
+		<border>ARM</border>
+		<border>AZE</border>
+		<border>BGR</border>
+		<border>GEO</border>
+		<border>GRC</border>
+		<border>IRN</border>
+		<border>IRQ</border>
+		<border>SYR</border>
+	</country>
+	<country capital="Funafuti" cca3="TUV" currency="AUD"
+		languages="English,Tuvaluan" latlng="-8,178" name="Tuvalu"
+		population="11323" region="Oceania" subregion="Polynesia" />
+	<country capital="Taipei" cca3="TWN" currency="TWD"
+		languages="Chinese" latlng="23.5,121" name="Taiwan"
+		population="23361147" region="Asia" subregion="Eastern Asia" />
+	<country capital="Dodoma" cca3="TZA" currency="TZS"
+		languages="English,Swahili" latlng="-6,35" name="Tanzania"
+		population="44928923" region="Africa" subregion="Eastern Africa">
+		<border>BDI</border>
+		<border>COD</border>
+		<border>KEN</border>
+		<border>MWI</border>
+		<border>MOZ</border>
+		<border>RWA</border>
+		<border>UGA</border>
+		<border>ZMB</border>
+	</country>
+	<country capital="Kampala" cca3="UGA" currency="UGX"
+		languages="English,Swahili" latlng="1,32" name="Uganda"
+		population="35357000" region="Africa" subregion="Eastern Africa">
+		<border>COD</border>
+		<border>KEN</border>
+		<border>RWA</border>
+		<border>SSD</border>
+		<border>TZA</border>
+	</country>
+	<country capital="Kyiv" cca3="UKR" currency="UAH"
+		languages="Ukrainian" latlng="49,32" name="Ukraine"
+		population="45461627" region="Europe" subregion="Eastern Europe">
+		<border>BLR</border>
+		<border>HUN</border>
+		<border>MDA</border>
+		<border>POL</border>
+		<border>ROU</border>
+		<border>RUS</border>
+		<border>SVK</border>
+	</country>
+	<country cca3="UMI" currency="USD" languages="English"
+		latlng="19.3,166.633333" name="United States Minor Outlying Islands"
+		population="300" region="Americas" subregion="Northern America" />
+	<country capital="Montevideo" cca3="URY" currency="UYI,UYU"
+		languages="Spanish" latlng="-33,-56" name="Uruguay"
+		population="3286314" region="Americas" subregion="South America">
+		<border>ARG</border>
+		<border>BRA</border>
+	</country>
+	<country capital="Washington D.C." cca3="USA"
+		currency="USD,USN,USS" languages="English" latlng="38,-97"
+		name="United States" population="317101000" region="Americas"
+		subregion="Northern America">
+		<border>CAN</border>
+		<border>MEX</border>
+	</country>
+	<country capital="Tashkent" cca3="UZB" currency="UZS"
+		languages="Russian,Uzbek" latlng="41,64" name="Uzbekistan"
+		population="30183400" region="Asia" subregion="Central Asia">
+		<border>AFG</border>
+		<border>KAZ</border>
+		<border>KGZ</border>
+		<border>TJK</border>
+		<border>TKM</border>
+	</country>
+	<country capital="Vatican City" cca3="VAT" currency="EUR"
+		languages="Italian,Latin" latlng="41.9,12.45" name="Vatican City"
+		population="800" region="Europe" subregion="Southern Europe">
+		<border>ITA</border>
+	</country>
+	<country capital="Kingstown" cca3="VCT" currency="XCD"
+		languages="English" latlng="13.25,-61.2"
+		name="Saint Vincent and the Grenadines" population="109000"
+		region="Americas" subregion="Caribbean" />
+	<country capital="Caracas" cca3="VEN" currency="VEF"
+		languages="Spanish" latlng="8,-66" name="Venezuela"
+		population="28946101" region="Americas" subregion="South America">
+		<border>BRA</border>
+		<border>COL</border>
+		<border>GUY</border>
+	</country>
+	<country capital="Road Town" cca3="VGB" currency="USD"
+		languages="English" latlng="18.431383,-64.62305"
+		name="British Virgin Islands" population="29537" region="Americas"
+		subregion="Caribbean" />
+	<country capital="Charlotte Amalie" cca3="VIR" currency="USD"
+		languages="English" latlng="18.35,-64.933333"
+		name="United States Virgin Islands" population="106405"
+		region="Americas" subregion="Caribbean" />
+	<country capital="Hanoi" cca3="VNM" currency="VND"
+		languages="Vietnamese" latlng="16.16666666,107.83333333"
+		name="Vietnam" population="90388000" region="Asia"
+		subregion="South-Eastern Asia">
+		<border>KHM</border>
+		<border>CHN</border>
+		<border>LAO</border>
+	</country>
+	<country capital="Port Vila" cca3="VUT" currency="VUV"
+		languages="Bislama,English,French" latlng="-16,167" name="Vanuatu"
+		population="264652" region="Oceania" subregion="Melanesia" />
+	<country capital="Mata-Utu" cca3="WLF" currency="XPF"
+		languages="French" latlng="-13.3,-176.2" name="Wallis and Futuna"
+		population="13135" region="Oceania" subregion="Polynesia" />
+	<country capital="Apia" cca3="WSM" currency="WST"
+		languages="English,Samoan" latlng="-13.58333333,-172.33333333"
+		name="Samoa" population="187820" region="Oceania"
+		subregion="Polynesia" />
+	<country capital="Sana'a" cca3="YEM" currency="YER"
+		languages="Arabic" latlng="15,48" name="Yemen" population="24527000"
+		region="Asia" subregion="Western Asia">
+		<border>OMN</border>
+		<border>SAU</border>
+	</country>
+	<country capital="Pretoria,Bloemfontein,Cape Town" cca3="ZAF"
+		currency="ZAR"
+		languages="Afrikaans,English,Southern Ndebele,Northern Sotho,Southern Sotho,Swazi,Tswana,Tsonga,Venda,Xhosa,Zulu"
+		latlng="-29,24" name="South Africa" population="52981991"
+		region="Africa" subregion="Southern Africa">
+		<border>BWA</border>
+		<border>LSO</border>
+		<border>MOZ</border>
+		<border>NAM</border>
+		<border>SWZ</border>
+		<border>ZWE</border>
+	</country>
+	<country capital="Lusaka" cca3="ZMB" currency="ZMW"
+		languages="English" latlng="-15,30" name="Zambia"
+		population="13092666" region="Africa" subregion="Eastern Africa">
+		<border>AGO</border>
+		<border>BWA</border>
+		<border>COD</border>
+		<border>MWI</border>
+		<border>MOZ</border>
+		<border>NAM</border>
+		<border>TZA</border>
+		<border>ZWE</border>
+	</country>
+	<country capital="Harare" cca3="ZWE" currency="ZWL"
+		languages="Chibarwe,English,Kalanga,Khoisan,Ndau,Northern Ndebele,Chewa,Shona,Sotho,Tonga,Tswana,Tsonga,Venda,Xhosa,Zimbabwean Sign Language"
+		latlng="-20,30" name="Zimbabwe" population="12973808" region="Africa"
+		subregion="Eastern Africa">
+		<border>BWA</border>
+		<border>MOZ</border>
+		<border>ZAF</border>
+		<border>ZMB</border>
+	</country>
+</countries>
