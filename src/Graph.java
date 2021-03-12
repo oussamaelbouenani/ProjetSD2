@@ -1,60 +1,42 @@
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
+import java.util.ArrayDeque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class Graph {
+public class Graph {
 
-    protected Map<String, Country> correspondanceCca3Countries ;
+    private Map<String, Country> correspondanceCca3Countries = new HashMap<String, Country>();
+    private Map<Country,Set<Route>> listeDAdjacence = new HashMap<Country,Set<Route>>();
+    
 
-    public Graph()  {
-        correspondanceCca3Countries= new HashMap<String, Country>();
+    protected void ajouterSommet(Country country) {
+    	this.correspondanceCca3Countries.put(country.getCca3(), country);
+    	this.listeDAdjacence.put(country, new HashSet<>());
     }
 
-    public void constructFromXML (String xmlFile)throws Exception {
-        File xml = new File(xmlFile);
-        DocumentBuilderFactory docBuildFact = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuild = docBuildFact.newDocumentBuilder();
-        Document doc = docBuild.parse(xml);
-        NodeList countries = doc.getElementsByTagName("countries");
-        for (int i = 0; i < countries.getLength(); i++) {
-            Node country = countries.item(i);
-            Element elCountries = (Element) country;
-            String cca3 = elCountries.getAttribute("cca3");
-            String name = elCountries.getAttribute("name");
-            Country a = new Country(cca3, name);
-            correspondanceCca3Countries.put(cca3, a);
-            ajouterSommet(a);
-        }
-        for (int i = 0; i < countries.getLength(); i++) {
-            Node country = countries.item(i);
-            Element elCountries = (Element) country;
-            String cca3 = elCountries.getAttribute("cca3");
-            NodeList routes = elCountries.getElementsByTagName("route");
-            for (int j = 0; j < routes.getLength(); j++) {
-                Node route = routes.item(j);
-                Element elFlight = (Element) route;
-                String dest = elFlight.getTextContent();
-                Route f = new Route(correspondanceCca3Countries.get(cca3), correspondanceCca3Countries.get(dest));
-                ajouterArc(f);
-            }
-        }
+    protected void ajouterArc(Route f) {
+    	this.listeDAdjacence.get(f.getSource()).add(f);
     }
 
-    protected abstract void ajouterSommet(Country country);
+    public Set<Route> arcsSortants(Country a){
+    	return this.listeDAdjacence.get(a);
+    }
 
-    protected abstract void ajouterArc(Route f);
+    public boolean sontAdjacents(Country a1, Country a2) {
+    	Set<Route> set1 = this.listeDAdjacence.get(a1);
+		Set<Route> set2 = this.listeDAdjacence.get(a2);
 
-    public abstract Set<Route> arcsSortants(Country a);
-
-    public abstract boolean sontAdjacents(Country a1, Country a2);
+		for (Route f1:
+			 set1) {
+			if (a2.equals(f1.getDestination())) return true;
+		}
+		for (Route f2:
+			 set2) {
+			if (a1.equals(f2.getDestination())) return true;
+		}
+		return false;
+    }
 
 
     /**
@@ -63,9 +45,15 @@ public abstract class Graph {
      * @param arrivée pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
      */
-    public void calculerItineraireMinimisantNombreDeFrontieres(String départ, String arrivée, String sortieXML) {
-        //TODO
-
+    public void calculerItineraireMinimisantNombreDeFrontieres(String depart, String arrivee, String sortieXML) {
+        ArrayDeque<Route> routes = new ArrayDeque<Route>();
+    	Country cDepart = this.correspondanceCca3Countries.get(depart);
+    	Country cArrivee = this.correspondanceCca3Countries.get(arrivee);
+    	Set<Route> tmp = arcsSortants(cDepart);
+    	for(Route r:tmp) {
+    		routes.add(r);
+    	}
+    	
     }
 
     /**
@@ -74,7 +62,7 @@ public abstract class Graph {
      * @param arrivée pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
      */
-    public void calculerItineraireMinimisantPopulationTotale(String départ, String arrivée, String sortieXML) {
+    public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) {
         //TODO
     }
 }
