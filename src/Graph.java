@@ -11,7 +11,7 @@ public class Graph {
     
 
     protected void ajouterSommet(Country country) {
-    	this.correspondanceCca3Countries.put(country.getCca3(), country);
+		this.correspondanceCca3Countries.put(country.getCca3(), country);
     	this.listeDAdjacence.put(country, new HashSet<>());
     }
 
@@ -46,14 +46,18 @@ public class Graph {
      * @param sortieXML nom de la sortie XML.
      */
     public void calculerItineraireMinimisantNombreDeFrontieres(String depart, String arrivee, String sortieXML) {
+        ArrayDeque<Route> itinRoutes = new ArrayDeque<Route>();
         ArrayDeque<Route> routes = new ArrayDeque<Route>();
+        boolean find = false;
     	Country cDepart = this.correspondanceCca3Countries.get(depart);
     	Country cArrivee = this.correspondanceCca3Countries.get(arrivee);
-    	Set<Route> tmp = arcsSortants(cDepart);
-    	for(Route r:tmp) {
-    		routes.add(r);
-    	}
     	
+    	while(!find) {
+    		Set<Route> tmp = arcsSortants(cDepart);
+        	for(Route r:tmp) {
+        		routes.push(r);
+        	}
+    	}
     }
 
     /**

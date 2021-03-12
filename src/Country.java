@@ -1,7 +1,7 @@
 public class Country {
 
     private String cca3, nom;
-
+    
     public Country(String cca3, String nom){
         this.cca3 = cca3;
         this.nom = nom;
