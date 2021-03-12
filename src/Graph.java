@@ -69,4 +69,12 @@ public class Graph {
     public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) {
         //TODO
     }
+
+	public Map<String, Country> getCorrespondanceCca3Countries() {
+		return correspondanceCca3Countries;
+	}
+
+	public Map<Country, Set<Route>> getListeDAdjacence() {
+		return listeDAdjacence;
+	}
 }
