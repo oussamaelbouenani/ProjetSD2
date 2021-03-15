@@ -1,6 +1,8 @@
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -46,16 +48,38 @@ public class Graph {
      * @param sortieXML nom de la sortie XML.
      */
     public void calculerItineraireMinimisantNombreDeFrontieres(String depart, String arrivee, String sortieXML) {
-        ArrayDeque<Route> itinRoutes = new ArrayDeque<Route>();
-        ArrayDeque<Route> routes = new ArrayDeque<Route>();
-        boolean find = false;
-    	Country cDepart = this.correspondanceCca3Countries.get(depart);
-    	Country cArrivee = this.correspondanceCca3Countries.get(arrivee);
+        ArrayDeque<List<Country>> routes = new ArrayDeque<List<Country>>();
+        List<Country> response = new ArrayList<Country>();
+        boolean firstBoucle = true;
+        Country cDepart;
+        
     	
-    	while(!find) {
-    		Set<Route> tmp = arcsSortants(cDepart);
-        	for(Route r:tmp) {
-        		routes.push(r);
+    	while(response == null) {
+    		List<Country> routesTmp = routes.pop();
+    		if(firstBoucle) {
+    			cDepart = this.correspondanceCca3Countries.get(depart);
+    		}else {
+    			cDepart = routesTmp.get(routesTmp.size());
+    		}
+    			
+    		Set<Route> routesSortant = arcsSortants(cDepart);
+    		
+        	for(Route r:routesSortant) {
+        		List<Country> itinTmp;
+        		
+        		if(firstBoucle) {
+        			itinTmp = new ArrayList<Country>();
+        		}else {
+        			itinTmp = routesTmp;
+        		}
+        		
+        		itinTmp.add(this.correspondanceCca3Countries.get(r.getDestination()));
+        		
+    			if(r.getDestination().equals(arrivee)) {
+    				response = itinTmp;
+    			}else {
+    				routes.add(itinTmp);
+    			}
         	}
     	}
     }
@@ -69,12 +93,4 @@ public class Graph {
     public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) {
         //TODO
     }
-
-	public Map<String, Country> getCorrespondanceCca3Countries() {
-		return correspondanceCca3Countries;
-	}
-
-	public Map<Country, Set<Route>> getListeDAdjacence() {
-		return listeDAdjacence;
-	}
 }
