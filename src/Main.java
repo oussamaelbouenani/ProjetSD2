@@ -12,7 +12,7 @@ public class Main {
 			saxParser.parse(inputFile, userhandler);
 			Graph g = userhandler.getGraph();
 			g.calculerItineraireMinimisantNombreDeFrontieres("BEL", "IND", "output.xml");
-			g.calculerItineraireMinimisantPopulationTotale("BEL", "IND", "output2.xml");
+			//g.calculerItineraireMinimisantPopulationTotale("BEL", "IND", "output2.xml");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(0);

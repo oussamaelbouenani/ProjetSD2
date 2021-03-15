@@ -1,3 +1,17 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,8 +22,15 @@ import java.util.Set;
 
 public class Graph {
 
-    private Map<String, Country> correspondanceCca3Countries = new HashMap<String, Country>();
-    private Map<Country,Set<Route>> listeDAdjacence = new HashMap<Country,Set<Route>>();
+    private Map<String, Country> correspondanceCca3Countries;
+    private Map<Country,Set<Route>> listeDAdjacence;
+
+    //TODO Disjkstra : chaque sommet se souvient du sommet précedent --> donc utiliser une map
+
+    public Graph(){
+		correspondanceCca3Countries = new HashMap<String, Country>();
+		listeDAdjacence = new HashMap<Country,Set<Route>>();
+	}
     
 
     protected void ajouterSommet(Country country) {
@@ -18,7 +39,7 @@ public class Graph {
     }
 
     protected void ajouterArc(Route f) {
-    	this.listeDAdjacence.get(f.getSource()).add(f);
+    	this.listeDAdjacence.get(this.correspondanceCca3Countries.get(f.getSource())).add(f);
     }
 
     public Set<Route> arcsSortants(Country a){
@@ -43,8 +64,8 @@ public class Graph {
 
     /**
      * calcule l’itinéraire entre deux pays passant par le moins de frontières possibles.
-     * @param départ pays de départ.
-     * @param arrivée pays d'arrivée.
+     * @param depart pays de départ.
+     * @param arrivee pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
      */
     public void calculerItineraireMinimisantNombreDeFrontieres(String depart, String arrivee, String sortieXML) {
@@ -54,25 +75,22 @@ public class Graph {
         Country cDepart;
         
     	
-    	while(response == null) {
-    		List<Country> routesTmp = routes.pop();
+    	while(response.isEmpty()) {
+
+			List<Country> routesTmp = new ArrayList<>();
     		if(firstBoucle) {
     			cDepart = this.correspondanceCca3Countries.get(depart);
     		}else {
-    			cDepart = routesTmp.get(routesTmp.size());
+				 routesTmp = routes.pop();
+    			cDepart = routesTmp.get(routesTmp.size()-1);
     		}
     			
     		Set<Route> routesSortant = arcsSortants(cDepart);
     		
         	for(Route r:routesSortant) {
         		List<Country> itinTmp;
-        		
-        		if(firstBoucle) {
-        			itinTmp = new ArrayList<Country>();
-        		}else {
-        			itinTmp = routesTmp;
-        		}
-        		
+
+				itinTmp = routesTmp;
         		itinTmp.add(this.correspondanceCca3Countries.get(r.getDestination()));
         		
     			if(r.getDestination().equals(arrivee)) {
@@ -81,16 +99,68 @@ public class Graph {
     				routes.add(itinTmp);
     			}
         	}
+        	firstBoucle = false;
     	}
+
+    	exportXML(response, depart, arrivee, sortieXML);
+
     }
 
     /**
      * calcule l’itinéraire entre deux pays pour lequel la somme des populations des pays traversés est la plus petite.
-     * @param départ pays de départ.
-     * @param arrivée pays d'arrivée.
+     * @param depart pays de départ.
+     * @param arrivee pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
      */
     public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) {
         //TODO
     }
+
+    private void exportXML(List<Country> resultat, String depart, String arrivee, String sortieXML){
+
+		System.out.println("Export en cours ...");
+
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db;
+		try {
+			db = dbf.newDocumentBuilder();
+			Document document = db.newDocument();
+
+			Element racine = document.createElement("itineraire");
+			racine.setAttribute("arrivee", arrivee);
+			racine.setAttribute("depart", depart);
+
+			int somme = 0;
+			for (Country country:
+				 resultat) {
+				ajoutNoeud(racine, country.getCca3(), country.getNom(), String.valueOf(country.getPopulation()));
+				somme += country.getPopulation();
+			}
+
+			racine.setAttribute("sommePopulation", String.valueOf(somme));
+
+			TransformerFactory tf = TransformerFactory.newInstance();
+			Transformer t = tf.newTransformer();
+			t.transform(new SAXSource((InputSource) document),new StreamResult(new File(sortieXML)));
+
+			System.out.println("Export fini");
+
+
+		} catch (ParserConfigurationException | TransformerException e) {
+			e.printStackTrace();
+		}
+
+
+	}
+
+	private void ajoutNoeud(Node parent, String cca3, String nom, String population)
+	{
+		System.out.println("Ajout noeud");
+
+		Element element = parent.getOwnerDocument().createElement("pays");
+		element.setAttribute("cca3", cca3);
+		element.setAttribute("nom", nom);
+		element.setAttribute("population", population);
+		parent.appendChild(element);
+	}
 }
