@@ -34,6 +34,8 @@ public class SAXHandler extends DefaultHandler {
         }else if (qName.equals("border")){
             this.isBorder = true;
         }
+
+
     }
 
     @Override
