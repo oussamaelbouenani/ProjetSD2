@@ -101,14 +101,19 @@ public class Graph {
 
     }
 
+	/**
+	 * BFS
+	 * calcule l’itinéraire entre deux pays passant par le moins de frontières possibles.
+	 * @param depart pays de départ.
+	 * @param arrivee pays d'arrivée.
+	 * @param sortieXML nom de la sortie XML.
+	 */
     public void calculerItineraireMinimisantNombreDeFrontieresOuss(String depart, String arrivee, String sortieXML){
 
     	Country countryDepart = correspondanceCca3Countries.get(depart);
     	Country countryArrivee = correspondanceCca3Countries.get(arrivee);
 
-		/**
-		 * ajouter les pays non-rencontres.
-		 */
+		//ajouter les pays non-rencontres.
 		ArrayDeque<Country> file = new ArrayDeque<>();
 		for (Map.Entry<String, Country> m:
 				correspondanceCca3Countries.entrySet()) {
@@ -159,20 +164,32 @@ public class Graph {
 
 		//on a tout parcouru.
 		if (file.isEmpty())
-			return reponse;
+			throw new IllegalArgumentException("Aucun lien entre les deux pays");
 
 		return calculerIt(arrivee, file.getFirst(), reponse, file);
 	}
 
 
     /**
+	 * Dijkstra
      * calcule l’itinéraire entre deux pays pour lequel la somme des populations des pays traversés est la plus petite.
      * @param depart pays de départ.
      * @param arrivee pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
      */
     public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) {
-        //TODO
+
+		Country cDepart = correspondanceCca3Countries.get(depart);
+		Country cArrivee = correspondanceCca3Countries.get(arrivee);
+
+		Set<Country> paysRencontres = new HashSet<>();
+		Set<Country> paysNonRencontres = new HashSet<>();
+
+		Map<Country, Country> successeurs = new HashMap<>();
+
+		//TODO
+
+
     }
 
     private void exportXML(List<Country> resultat, String depart, String arrivee, String sortieXML){

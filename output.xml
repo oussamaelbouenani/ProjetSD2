@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<itineraire arrivee="IND" depart="BEL" sommePopulation="256369845">
+<pays cca3="BEL" nom="Belgium" population="11175653"/>
+<pays cca3="PNG" nom="Papua New Guinea" population="7059653"/>
+<pays cca3="SDN" nom="Sudan" population="37964000"/>
+<pays cca3="GMB" nom="Gambia" population="1782893"/>
+<pays cca3="MYS" nom="Malaysia" population="29793600"/>
+<pays cca3="POL" nom="Poland" population="38533299"/>
+<pays cca3="OMN" nom="Oman" population="3929000"/>
+<pays cca3="SUR" nom="Suriname" population="534189"/>
+<pays cca3="ARE" nom="United Arab Emirates" population="5473972"/>
+<pays cca3="KEN" nom="Kenya" population="44354000"/>
+<pays cca3="ARG" nom="Argentina" population="40117096"/>
+<pays cca3="GNB" nom="Guinea-Bissau" population="1704000"/>
+<pays cca3="ARM" nom="Armenia" population="3024100"/>
+<pays cca3="UZB" nom="Uzbekistan" population="30183400"/>
+<pays cca3="BTN" nom="Bhutan" population="740990"/>
+</itineraire>
