@@ -9,7 +9,7 @@ public class SAXHandler extends DefaultHandler {
 
     private boolean isBorder;
 
-    public SAXHandler(){
+    public SAXHandler() {
         super();
         this.country = null;
         this.graph = new Graph();
@@ -28,10 +28,10 @@ public class SAXHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         super.startElement(uri, localName, qName, attributes);
-        if (qName.equals("country")){
+        if (qName.equals("country")) {
             this.country = new Country(attributes.getValue("cca3"), attributes.getValue("name"), Integer.parseInt(attributes.getValue("population")));
             graph.ajouterSommet(this.country);
-        }else if (qName.equals("border")){
+        } else if (qName.equals("border")) {
             this.isBorder = true;
         }
 
@@ -41,9 +41,9 @@ public class SAXHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         super.endElement(uri, localName, qName);
-        if(qName.equals("border")) {
+        if (qName.equals("border")) {
             this.isBorder = false;
-        }else if (qName.equals("country")){
+        } else if (qName.equals("country")) {
             this.country = null;
         }
     }
@@ -51,12 +51,18 @@ public class SAXHandler extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         super.characters(ch, start, length);
-        if (this.isBorder)
-            this.graph.ajouterArc(new Route(this.country.getCca3(), new String(ch, start, length)));
+        if (this.isBorder) {
+            try {
+                this.graph.ajouterArc(this.country.getCca3(), new String(ch, start, length));
+            } catch (PaysNotFound paysNotFound) {
+                paysNotFound.printStackTrace();
+            }
+        }
     }
 
     /**
      * renvoie le graph créé sur base de l'input XML.
+     *
      * @return le graph construit.
      */
     public Graph getGraph() {

@@ -1,9 +1,9 @@
 public class Country {
 
     private String cca3, nom;
-    int population;
-    
-    public Country(String cca3, String nom, int population){
+    private int population;
+
+    public Country(String cca3, String nom, int population) {
         this.cca3 = cca3;
         this.nom = nom;
         this.population = population;
