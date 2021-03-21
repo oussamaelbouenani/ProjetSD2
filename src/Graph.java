@@ -19,7 +19,6 @@ public class Graph {
     private Map<String, Country> correspondanceCca3Countries;
     private Map<String, Set<String>> listeDAdjacence;
 
-    //TODO Disjkstra : chaque sommet se souvient du sommet précedent --> donc utiliser une map
 
     public Graph() {
         this.correspondanceCca3Countries = new HashMap<>();
@@ -32,9 +31,11 @@ public class Graph {
         this.listeDAdjacence.put(country.getCca3(), new HashSet<>());
     }
 
+
     protected void ajouterArc(String depart, String destination) throws PaysNotFound {
         this.listeDAdjacence.get(depart).add(destination);
     }
+
 
     public Set<String> arcsSortants(String country) throws PaysNotFound {
         if (!correspondanceCca3Countries.containsKey(country))
@@ -43,58 +44,6 @@ public class Graph {
         return this.listeDAdjacence.get(country);
     }
 
-    public boolean sontAdjacents(String a1, String a2) throws PaysNotFound {
-        if (!correspondanceCca3Countries.containsKey(a1) || !correspondanceCca3Countries.containsKey(a2)) {
-            throw new PaysNotFound(a1 + " " + a2);
-        }
-        return listeDAdjacence.get(a1).contains(a2);
-    }
-
-
-    /**
-     * calcule l’itinéraire entre deux pays passant par le moins de frontières possibles.
-     *
-     * @param depart    pays de départ.
-     * @param arrivee   pays d'arrivée.
-     * @param sortieXML nom de la sortie XML.
-     */
-    /**
-     public void calculerItineraireMinimisantNombreDeFrontieres(String depart, String arrivee, String sortieXML) {
-     ArrayDeque<List<Country>> routes = new ArrayDeque<>();
-     List<Country> response = new ArrayList<>();
-     boolean firstBoucle = true;
-     Country cDepart;
-
-     while (response.isEmpty()) {
-
-     List<Country> routesTmp = new ArrayList<>();
-     if (firstBoucle) {
-     cDepart = this.correspondanceCca3Countries.get(depart);
-     } else {
-     routesTmp = routes.pop();
-     cDepart = routesTmp.get(routesTmp.size() - 1);
-     }
-
-     Set<Route> routesSortant = arcsSortants(cDepart);
-
-     for (Route r : routesSortant) {
-     List<Country> itinTmp;
-
-     itinTmp = routesTmp;
-     itinTmp.add(this.correspondanceCca3Countries.get(r.getSource()));
-
-     if (r.getDestination().equals(arrivee)) {
-     response = itinTmp;
-     } else {
-     routes.add(itinTmp);
-     }
-     }
-     firstBoucle = false;
-     }
-
-     //exportXML(response, depart, arrivee, sortieXML);
-
-     }**/
 
     /**
      * BFS
@@ -107,7 +56,6 @@ public class Graph {
     public void calculerItineraireMinimisantNombreDeFrontieresOuss(String depart, String arrivee, String sortieXML) throws PaysNotFound {
 
         Deque<String> file = new ArrayDeque<>();
-        Deque<String> response = new ArrayDeque<>();
 
         Set<String> paysRencontres = new HashSet<>();
 
@@ -132,15 +80,9 @@ public class Graph {
             paysCourant = file.pop();
         } while (!trouve);
 
-        String precedent = arrivee;
-        response.add(precedent);
-        while (!precedent.equals(depart)) {
-            String newPrecedent = successeurs.get(precedent);
-            response.addFirst(newPrecedent);
-            precedent = newPrecedent;
-        }
 
-        exportXML(response, depart, arrivee, sortieXML);
+        List<String> response = toList(depart, arrivee, successeurs);
+        exportXML(depart, arrivee, sortieXML, response);
 
     }
 
@@ -155,59 +97,113 @@ public class Graph {
      */
     public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) throws PaysNotFound {
 
-        String sommetCourrant = depart;
+        if (!correspondanceCca3Countries.containsKey(depart) || !correspondanceCca3Countries.containsKey(arrivee))
+            throw new PaysNotFound();
 
-        Set<String> paysRencontres = new HashSet<>();
-        Set<String> etiquetteProvisoire = new HashSet<>();
-        Deque<String> etiquetteDefinitives = new ArrayDeque<>();
+        Map<String, Long> poids = new HashMap<>();
+        Map<String, String> successeurs = new HashMap<>();
 
-        etiquetteDefinitives.add(sommetCourrant);
+        List<String> open = new ArrayList<>();
+        List<String> closed = new ArrayList<>();
 
-        long lesMin = 0;
-
-        while (!sommetCourrant.equals(arrivee)) {
-
-
-            paysRencontres.add(sommetCourrant);
-
-            // étiquette provisoire -> pays limitrophes NON RENCONTRES.
-            for (String c :
-                    arcsSortants(sommetCourrant)) {
-                if (!paysRencontres.contains(c)) {
-                    etiquetteProvisoire.add(c);
-                }
-            }
-
-            // trouver min
-            int min = Integer.MAX_VALUE;
-
-            String paysMin = "";
-            for (String c :
-                    etiquetteProvisoire) {
-
-                Country country = correspondanceCca3Countries.get(c);
-                if (min > country.getPopulation() + lesMin) {
-                    min = country.getPopulation();
-                    paysMin = c;
-                }
-            }
-
-
-            // Nouveau sommet
-            sommetCourrant = paysMin;
-            System.out.println("--> " + paysMin);
-            lesMin += correspondanceCca3Countries.get(sommetCourrant).getPopulation();
-            etiquetteDefinitives.addLast(sommetCourrant);
-
+        for (Map.Entry<String, Country> entry :
+                correspondanceCca3Countries.entrySet()) {
+            poids.put(entry.getKey(), Long.MAX_VALUE);
+            successeurs.put(entry.getKey(), null);
         }
 
-        exportXML(etiquetteDefinitives, depart, arrivee, sortieXML);
+        poids.put(depart, 0L);
+        open.add(depart);
+
+        while (!open.isEmpty()) {
+
+            String min = trouverMinPays(open, poids);
+            closed.add(min);
+            open.remove(min);
+
+            for (String p :
+                    arcsSortants(min)) {
+                if (!closed.contains(p)) {
+
+                    Long alt = poids.get(min) + correspondanceCca3Countries.get(p).getPopulation();
+
+                    if (alt < poids.get(p)) {
+                        poids.put(p, alt);
+                        open.add(p);
+                        successeurs.put(p, min);
+                    }
+                }
+            }
+        }
+
+        List<String> resultat = toList(depart, arrivee, successeurs);
+        exportXML(depart, arrivee, sortieXML, resultat);
 
     }
 
-    private void exportXML(Deque<String> resultat, String depart, String arrivee, String sortieXML) {
+
+    /**
+     * Renvoie le pays avec le plus petit poids.
+     *
+     * @param open  noeuds non-traites.
+     * @param poids poids actuel de chaque pays.
+     * @return le pays ayant le plus petit poids.
+     */
+    private String trouverMinPays(List<String> open, Map<String, Long> poids) {
+        Long minPoids = Long.MAX_VALUE;
+        String minPays = null;
+
+        for (String pays :
+                open) {
+            if (poids.get(pays) < minPoids) {
+                minPays = pays;
+                minPoids = poids.get(pays);
+            }
+        }
+        if (minPays == null) {
+            System.out.println("Pas de min");
+            minPays = open.get(0);
+        }
+        return minPays;
+    }
+
+
+    /**
+     * Parcours une suite de successeurs et renvoie une liste.
+     *
+     * @param depart      pays départ.
+     * @param arrivee     pays arrivee.
+     * @param successeurs map successeurs.
+     * @return liste contenant les pays.
+     */
+    private List<String> toList(String depart, String arrivee, Map<String, String> successeurs) {
+        List<String> resultat = new ArrayList<>();
+        String precedent = arrivee;
+
+        resultat.add(precedent);
+        while (!precedent.equals(depart)) {
+            String newPrecedent = successeurs.get(precedent);
+            resultat.add(newPrecedent);
+            precedent = newPrecedent;
+        }
+        return resultat;
+    }
+
+
+    /**
+     * Export le resultat en un fichier XML.
+     *
+     * @param depart    pays de départ.
+     * @param arrivee   pays d'arrivée.
+     * @param sortieXML nom de l'output XML.
+     * @param resultat  itineraire contenant les pays.
+     */
+    private void exportXML(String depart, String arrivee, String sortieXML, List<String> resultat) {
+
+        Collections.reverse(resultat);
 
         System.out.println("Export en cours ...");
+        System.out.println("-> Trajet en " + resultat.size() + " pays trouvé");
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db;
@@ -238,15 +234,24 @@ public class Graph {
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(domSource, streamResult);
 
+
             System.out.println("Export fini !");
 
         } catch (ParserConfigurationException | TransformerException e) {
             e.printStackTrace();
         }
 
-
     }
 
+
+    /**
+     * ajoute un element au noeud parent.
+     *
+     * @param parent     noeud parent.
+     * @param cca3       cca3 du pays.
+     * @param nom        nom du pays.
+     * @param population nombre de population du pays.
+     */
     private void ajoutNoeud(Node parent, String cca3, String nom, String population) {
         Element element = parent.getOwnerDocument().createElement("pays");
         element.setAttribute("cca3", cca3);
