@@ -56,21 +56,14 @@ public class Graph {
     public void calculerItineraireMinimisantNombreDeFrontieresOuss(String depart, String arrivee, String sortieXML) throws PaysNotFound {
 
         Deque<String> file = new ArrayDeque<>();
-
         Set<String> paysRencontres = new HashSet<>();
-
         Map<String, String> successeurs = new HashMap<>();
-
-        boolean trouve = false;
 
         String paysCourant = depart;
 
         do {
             for (String c :
                     arcsSortants(paysCourant)) {
-
-                if (c.equals(arrivee))
-                    trouve = true;
                 if (!paysRencontres.contains(c)) {
                     file.add(c);
                     paysRencontres.add(c);
@@ -78,7 +71,7 @@ public class Graph {
                 }
             }
             paysCourant = file.pop();
-        } while (!trouve);
+        } while (!file.isEmpty());
 
 
         List<String> response = toList(depart, arrivee, successeurs);
