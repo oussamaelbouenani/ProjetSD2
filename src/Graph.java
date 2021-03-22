@@ -52,6 +52,7 @@ public class Graph {
      * @param depart    pays de départ.
      * @param arrivee   pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
+     * @throws PaysNotFound exception en cas de pays inexistant.
      */
     public void calculerItineraireMinimisantNombreDeFrontieresOuss(String depart, String arrivee, String sortieXML) throws PaysNotFound {
 
@@ -81,12 +82,29 @@ public class Graph {
 
 
     /**
+     * calculer un itinéraire en minimisant d’abord le nombre de pays traversés et ensuite la somme des populations.
+     *
+     * @param depart    pays de depart.
+     * @param arrivee   pays d'arrivee.
+     * @param sortieXML nom de la sortie XML.
+     * @throws PaysNotFound exception en cas de pays inexistant.
+     */
+    public void dijkstraAmeliore(String depart, String arrivee, String sortieXML) throws PaysNotFound {
+        if (!correspondanceCca3Countries.containsKey(depart) || !correspondanceCca3Countries.containsKey(arrivee))
+            throw new IllegalArgumentException();
+        
+
+    }
+
+
+    /**
      * Dijkstra
      * calcule l’itinéraire entre deux pays pour lequel la somme des populations des pays traversés est la plus petite.
      *
      * @param depart    pays de départ.
      * @param arrivee   pays d'arrivée.
      * @param sortieXML nom de la sortie XML.
+     * @throws PaysNotFound exception en cas de pays inexistant.
      */
     public void calculerItineraireMinimisantPopulationTotale(String depart, String arrivee, String sortieXML) throws PaysNotFound {
 
@@ -118,7 +136,7 @@ public class Graph {
                     arcsSortants(min)) {
                 if (!closed.contains(p)) {
 
-                    Long alt = poids.get(min) + correspondanceCca3Countries.get(p).getPopulation();
+                    long alt = poids.get(min) + correspondanceCca3Countries.get(p).getPopulation();
 
                     if (alt < poids.get(p)) {
                         poids.put(p, alt);
