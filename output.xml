@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE itineraire SYSTEM "itineraire.dtd">
 <itineraire arrivee="IND" depart="BEL" nbPays="6" sommePopulation="2871572652">
     <pays cca3="BEL" nom="Belgium" population="11175653"/>
     <pays cca3="DEU" nom="Germany" population="80523700"/>

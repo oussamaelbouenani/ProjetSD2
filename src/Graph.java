@@ -1,5 +1,7 @@
 import org.w3c.dom.DOMException;
+import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -239,9 +241,16 @@ public class Graph {
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
+            
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            DOMImplementation domImpl = document.getImplementation();
+            DocumentType doctype = domImpl.createDocumentType("doctype", "", "itineraire.dtd");
+            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
+            
             DOMSource domSource = new DOMSource(document);
             StreamResult streamResult = new StreamResult(new File(sortieXML));
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(domSource, streamResult);
 
 
