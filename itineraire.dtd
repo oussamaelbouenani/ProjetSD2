@@ -1,9 +1,9 @@
 <!ELEMENT pays EMPTY>
-<!ELEMENT itineraire (pays*)>
-<!ATTLIST pays cca3 ID | IDREF #REQUIRED>
-<!ATTLIST pays nom CDATA #REQUIRED>
-<!ATTLIST pays population CDATA #REQUIRED>
-<!ATTLIST itineraire arrivee ID #REQUIRED>
-<!ATTLIST itineraire depart ID #REQUIRED>
-<!ATTLIST itineraire nbPays CDATA #REQUIRED>
-<!ATTLIST itineraire sommePopulation CDATA #REQUIRED>
+        <!ELEMENT itineraire (pays*)>
+        <!ATTLIST pays cca3 CDATA #REQUIRED>
+        <!ATTLIST pays nom CDATA #REQUIRED>
+        <!ATTLIST pays population CDATA #REQUIRED>
+        <!ATTLIST itineraire arrivee ID #REQUIRED>
+        <!ATTLIST itineraire depart ID #REQUIRED>
+        <!ATTLIST itineraire nbPays CDATA #REQUIRED>
+        <!ATTLIST itineraire sommePopulation CDATA #REQUIRED>

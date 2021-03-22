@@ -9,10 +9,10 @@ public class SAXHandler extends DefaultHandler {
 
     private boolean isBorder;
 
-    public SAXHandler() {
+    public SAXHandler() throws PaysNotFound {
         super();
         this.country = null;
-        this.graph = new Graph();
+        this.graph = new Graph(null);
     }
 
     @Override

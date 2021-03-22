@@ -1,8 +1,4 @@
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,45 +14,69 @@ import java.util.*;
 
 public class Graph {
 
-    private Map<String, Country> correspondanceCca3Countries = new HashMap<String, Country>();
-    private Map<String, Set<String>> listeDAdjacence = new HashMap<String, Set<String>>();
+    private Map<String, Country> correspondanceCca3Countries = new HashMap<>();
+    private Map<String, Set<String>> listeDAdjacence = new HashMap<>();
 
     private List<String> resultat;
     private Map<String, String> successeurs;
 
-
-    public Graph() {
-    }
-
+    /**
+     * Construit un graph sur base d'un document.
+     *
+     * @param doc document créé sur base de l'input XML.
+     * @throws DOMException lancé si un opération plante.
+     * @throws PaysNotFound lancé si le pays n'existe pas.
+     */
     public Graph(Document doc) throws DOMException, PaysNotFound {
-        NodeList countries = doc.getElementsByTagName("country");
-        for (int i = 0; i < countries.getLength(); i++) {
-            Node nCountry = countries.item(i);
-            Element eCountry = (Element) nCountry;
-            Country country = new Country(eCountry.getAttribute("cca3"), eCountry.getAttribute("name"), Integer.parseInt(eCountry.getAttribute("population")));
-            this.ajouterSommet(country);
+        if (doc != null) {
+            NodeList countries = doc.getElementsByTagName("country");
+            for (int i = 0; i < countries.getLength(); i++) {
+                Node nCountry = countries.item(i);
+                Element eCountry = (Element) nCountry;
+                Country country = new Country(eCountry.getAttribute("cca3"), eCountry.getAttribute("name"), Integer.parseInt(eCountry.getAttribute("population")));
+                this.ajouterSommet(country);
 
-            NodeList borders = eCountry.getElementsByTagName("border");
-            for (int j = 0; j < borders.getLength(); j++) {
-                Node nBorder = borders.item(j);
-                Element eBorder = (Element) nBorder;
-                this.ajouterArc(eCountry.getAttribute("cca3"), eBorder.getTextContent());
+                NodeList borders = eCountry.getElementsByTagName("border");
+                for (int j = 0; j < borders.getLength(); j++) {
+                    Node nBorder = borders.item(j);
+                    Element eBorder = (Element) nBorder;
+                    this.ajouterArc(eCountry.getAttribute("cca3"), eBorder.getTextContent());
+                }
             }
         }
     }
 
 
-    protected void ajouterSommet(Country country) {
+    /**
+     * Ajoute un pays dans la map.
+     *
+     * @param country pays à ajouter.
+     */
+    public void ajouterSommet(Country country) {
         this.correspondanceCca3Countries.put(country.getCca3(), country);
         this.listeDAdjacence.put(country.getCca3(), new HashSet<>());
     }
 
 
-    protected void ajouterArc(String depart, String destination) throws PaysNotFound {
+    /**
+     * Relis les pays limitrophes.
+     *
+     * @param depart      pays de depart.
+     * @param destination pays de destination.
+     * @throws PaysNotFound en cas de pays inexistant.
+     */
+    public void ajouterArc(String depart, String destination) throws PaysNotFound {
         this.listeDAdjacence.get(depart).add(destination);
     }
 
 
+    /**
+     * Renvoie tous les pays limitrophes à celui passé en parametre.
+     *
+     * @param country pays à vérifier.
+     * @return les pays adjacents.
+     * @throws PaysNotFound en cas de pays inexistant.
+     */
     public Set<String> arcsSortants(String country) throws PaysNotFound {
         if (!correspondanceCca3Countries.containsKey(country))
             throw new PaysNotFound(country);
@@ -113,12 +133,6 @@ public class Graph {
     public void dijkstraAmeliore(String depart, String arrivee, String sortieXML) throws PaysNotFound {
         if (!correspondanceCca3Countries.containsKey(depart) || !correspondanceCca3Countries.containsKey(arrivee))
             throw new IllegalArgumentException();
-        calculerItineraireMinimisantNombreDeFrontieresOuss(depart, arrivee, sortieXML);
-        int max = this.resultat.size();
-        int longueur = 0;
-
-        if (!correspondanceCca3Countries.containsKey(depart) || !correspondanceCca3Countries.containsKey(arrivee))
-            throw new PaysNotFound();
 
         Map<String, Long> poids = new HashMap<>();
         this.successeurs = new HashMap<>();
@@ -145,19 +159,12 @@ public class Graph {
                     arcsSortants(min)) {
                 if (!closed.contains(p)) {
 
-                    long alt;
-
-                    if (longueur > max) {
-                        alt = Long.MAX_VALUE;
-                    } else {
-                        alt = poids.get(min) + correspondanceCca3Countries.get(p).getPopulation();
-                    }
+                    long alt = poids.get(min) + correspondanceCca3Countries.get(p).getPopulation() + 50000000000L;
 
                     if (alt < poids.get(p)) {
                         poids.put(p, alt);
                         open.add(p);
                         successeurs.put(p, min);
-                        longueur++;
                     }
                 }
             }
@@ -166,9 +173,7 @@ public class Graph {
         this.resultat = toList(depart, arrivee);
         exportXML(depart, arrivee, sortieXML);
 
-
     }
-
 
     /**
      * Dijkstra
