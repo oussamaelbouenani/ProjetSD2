@@ -1,8 +1,4 @@
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -21,25 +17,28 @@ public class Graph {
     private Map<String, Country> correspondanceCca3Countries = new HashMap<String, Country>();
     private Map<String, Set<String>> listeDAdjacence = new HashMap<String, Set<String>>();
 
+    private List<String> resultat;
+    private Map<String, String> successeurs;
+
 
     public Graph() {
     }
-    
+
     public Graph(Document doc) throws DOMException, PaysNotFound {
-    	NodeList countries = doc.getElementsByTagName("country");
-    	for(int i=0; i<countries.getLength(); i++) {
-    		Node nCountry = countries.item(i);
-    		Element eCountry = (Element) nCountry;
-    		Country country = new Country(eCountry.getAttribute("cca3"), eCountry.getAttribute("name"), Integer.parseInt(eCountry.getAttribute("population")));
-    		this.ajouterSommet(country);
-    		
-    		NodeList borders = eCountry.getElementsByTagName("border");
-    		for(int j=0; j<borders.getLength(); j++) {
-    			Node nBorder = borders.item(j);
-    			Element eBorder = (Element) nBorder;
-    			this.ajouterArc(eCountry.getAttribute("cca3"), eBorder.getTextContent());
-    		}
-    	}
+        NodeList countries = doc.getElementsByTagName("country");
+        for (int i = 0; i < countries.getLength(); i++) {
+            Node nCountry = countries.item(i);
+            Element eCountry = (Element) nCountry;
+            Country country = new Country(eCountry.getAttribute("cca3"), eCountry.getAttribute("name"), Integer.parseInt(eCountry.getAttribute("population")));
+            this.ajouterSommet(country);
+
+            NodeList borders = eCountry.getElementsByTagName("border");
+            for (int j = 0; j < borders.getLength(); j++) {
+                Node nBorder = borders.item(j);
+                Element eBorder = (Element) nBorder;
+                this.ajouterArc(eCountry.getAttribute("cca3"), eBorder.getTextContent());
+            }
+        }
     }
 
 
@@ -75,7 +74,7 @@ public class Graph {
 
         Deque<String> file = new ArrayDeque<>();
         Set<String> paysRencontres = new HashSet<>();
-        Map<String, String> successeurs = new HashMap<>();
+        this.successeurs = new HashMap<>();
 
         String paysCourant = depart;
 
@@ -92,13 +91,14 @@ public class Graph {
         } while (!file.isEmpty());
 
 
-        List<String> response = toList(depart, arrivee, successeurs);
-        exportXML(depart, arrivee, sortieXML, response);
+        this.resultat = toList(depart, arrivee);
+        exportXML(depart, arrivee, sortieXML);
 
     }
 
 
     /**
+     * Dijkstra amélioré.
      * calculer un itinéraire en minimisant d’abord le nombre de pays traversés et ensuite la somme des populations.
      *
      * @param depart    pays de depart.
@@ -109,7 +109,59 @@ public class Graph {
     public void dijkstraAmeliore(String depart, String arrivee, String sortieXML) throws PaysNotFound {
         if (!correspondanceCca3Countries.containsKey(depart) || !correspondanceCca3Countries.containsKey(arrivee))
             throw new IllegalArgumentException();
-        
+        calculerItineraireMinimisantNombreDeFrontieresOuss(depart, arrivee, sortieXML);
+        int max = this.resultat.size();
+        int longueur = 0;
+
+        if (!correspondanceCca3Countries.containsKey(depart) || !correspondanceCca3Countries.containsKey(arrivee))
+            throw new PaysNotFound();
+
+        Map<String, Long> poids = new HashMap<>();
+        this.successeurs = new HashMap<>();
+
+        List<String> open = new ArrayList<>();
+        List<String> closed = new ArrayList<>();
+
+        for (Map.Entry<String, Country> entry :
+                correspondanceCca3Countries.entrySet()) {
+            poids.put(entry.getKey(), Long.MAX_VALUE);
+            successeurs.put(entry.getKey(), null);
+        }
+
+        poids.put(depart, 0L);
+        open.add(depart);
+
+        while (!open.isEmpty()) {
+
+            String min = trouverMinPays(open, poids);
+            closed.add(min);
+            open.remove(min);
+
+            for (String p :
+                    arcsSortants(min)) {
+                if (!closed.contains(p)) {
+
+                    long alt;
+
+                    if (longueur > max) {
+                        alt = Long.MAX_VALUE;
+                    } else {
+                        alt = poids.get(min) + correspondanceCca3Countries.get(p).getPopulation();
+                    }
+
+                    if (alt < poids.get(p)) {
+                        poids.put(p, alt);
+                        open.add(p);
+                        successeurs.put(p, min);
+                        longueur++;
+                    }
+                }
+            }
+        }
+
+        this.resultat = toList(depart, arrivee);
+        exportXML(depart, arrivee, sortieXML);
+
 
     }
 
@@ -129,7 +181,7 @@ public class Graph {
             throw new PaysNotFound();
 
         Map<String, Long> poids = new HashMap<>();
-        Map<String, String> successeurs = new HashMap<>();
+        this.successeurs = new HashMap<>();
 
         List<String> open = new ArrayList<>();
         List<String> closed = new ArrayList<>();
@@ -164,8 +216,8 @@ public class Graph {
             }
         }
 
-        List<String> resultat = toList(depart, arrivee, successeurs);
-        exportXML(depart, arrivee, sortieXML, resultat);
+        this.resultat = toList(depart, arrivee);
+        exportXML(depart, arrivee, sortieXML);
 
     }
 
@@ -199,22 +251,21 @@ public class Graph {
     /**
      * Parcours une suite de successeurs et renvoie une liste.
      *
-     * @param depart      pays départ.
-     * @param arrivee     pays arrivee.
-     * @param successeurs map successeurs.
+     * @param depart  pays départ.
+     * @param arrivee pays arrivee.
      * @return liste contenant les pays.
      */
-    private List<String> toList(String depart, String arrivee, Map<String, String> successeurs) {
-        List<String> resultat = new ArrayList<>();
+    private List<String> toList(String depart, String arrivee) {
+        List<String> res = new ArrayList<>();
         String precedent = arrivee;
 
-        resultat.add(precedent);
+        res.add(precedent);
         while (!precedent.equals(depart)) {
-            String newPrecedent = successeurs.get(precedent);
-            resultat.add(newPrecedent);
+            String newPrecedent = this.successeurs.get(precedent);
+            res.add(newPrecedent);
             precedent = newPrecedent;
         }
-        return resultat;
+        return res;
     }
 
 
@@ -224,9 +275,8 @@ public class Graph {
      * @param depart    pays de départ.
      * @param arrivee   pays d'arrivée.
      * @param sortieXML nom de l'output XML.
-     * @param resultat  itineraire contenant les pays.
      */
-    private void exportXML(String depart, String arrivee, String sortieXML, List<String> resultat) {
+    private void exportXML(String depart, String arrivee, String sortieXML) {
 
         Collections.reverse(resultat);
 
