@@ -1,6 +1,8 @@
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,13 +18,28 @@ import java.util.*;
 
 public class Graph {
 
-    private Map<String, Country> correspondanceCca3Countries;
-    private Map<String, Set<String>> listeDAdjacence;
+    private Map<String, Country> correspondanceCca3Countries = new HashMap<String, Country>();
+    private Map<String, Set<String>> listeDAdjacence = new HashMap<String, Set<String>>();
 
 
     public Graph() {
-        this.correspondanceCca3Countries = new HashMap<>();
-        this.listeDAdjacence = new HashMap<>();
+    }
+    
+    public Graph(Document doc) throws DOMException, PaysNotFound {
+    	NodeList countries = doc.getElementsByTagName("country");
+    	for(int i=0; i<countries.getLength(); i++) {
+    		Node nCountry = countries.item(i);
+    		Element eCountry = (Element) nCountry;
+    		Country country = new Country(eCountry.getAttribute("cca3"), eCountry.getAttribute("name"), Integer.parseInt(eCountry.getAttribute("population")));
+    		this.ajouterSommet(country);
+    		
+    		NodeList borders = eCountry.getElementsByTagName("border");
+    		for(int j=0; j<borders.getLength(); j++) {
+    			Node nBorder = borders.item(j);
+    			Element eBorder = (Element) nBorder;
+    			this.ajouterArc(eCountry.getAttribute("cca3"), eBorder.getTextContent());
+    		}
+    	}
     }
 
 
